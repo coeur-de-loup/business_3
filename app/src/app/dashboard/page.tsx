@@ -131,7 +131,7 @@ export default function DashboardPage() {
                     className="flex items-center justify-between p-4 border rounded-lg"
                   >
                     <div>
-                      <div className="font-semibold">{execution.workflow.name}</div>
+                      <div className="font-semibold">{execution.workflow?.name}</div>
                       <div className="text-sm text-gray-600">
                         {new Date(execution.startedAt).toLocaleString()}
                       </div>

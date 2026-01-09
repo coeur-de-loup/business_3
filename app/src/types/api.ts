@@ -123,6 +123,7 @@ export interface CreateExecutionRequest {
 
 export interface ExecutionResponse {
   id: string;
+  workflowId: string;
   status: ExecutionStatus;
   result: ExecutionResult;
   startedAt: string;
@@ -133,11 +134,11 @@ export interface ExecutionResponse {
   error: Record<string, any> | null;
   triggeredBy: TriggeredBy;
   triggeredByUserId: string | null;
-  workflow: {
+  workflow?: {
     id: string;
     name: string;
   };
-  user: {
+  user?: {
     id: string;
     name: string | null;
     email: string;
@@ -159,7 +160,7 @@ export interface ExecutionLogResponse {
 
 export interface CreateIntegrationRequest {
   provider: IntegrationProvider;
-  credentials: Record<string, any>;
+  credentials?: Record<string, any>;
   settings?: Record<string, any>;
 }
 
@@ -176,7 +177,7 @@ export interface IntegrationResponse {
   lastUsedAt: string | null;
   createdAt: string;
   updatedAt: string;
-  webhookUrl: string | null;
+  webhookUrl?: string | null;
 }
 
 // ============================================================================

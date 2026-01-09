@@ -77,6 +77,7 @@ export async function GET(request: NextRequest) {
         successRate,
         recentExecutions: recentExecutions.map((exec) => ({
           id: exec.id,
+          workflowId: exec.workflowId,
           status: exec.status,
           result: exec.result,
           startedAt: exec.startedAt.toISOString(),
