@@ -230,8 +230,17 @@ export async function getServerSession(): Promise<{
 }> {
   const session = await getSession();
 
+  if (!session) {
+    return { user: null };
+  }
+
   return {
-    user: session || null,
+    user: {
+      id: session.userId,
+      email: session.email,
+      organizationId: session.organizationId,
+      role: session.role,
+    },
   };
 }
 

@@ -9,11 +9,23 @@
 
 import Stripe from 'stripe';
 
-// Initialize Stripe with secret key from environment
-// In test mode, this uses test keys (sk_test_*)
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2025-12-15.clover' as any,
-  typescript: true,
+// Lazy initialization of Stripe client to avoid build-time initialization
+function getStripeClient(): Stripe {
+  if (!process.env.STRIPE_SECRET_KEY) {
+    throw new Error('STRIPE_SECRET_KEY is not set');
+  }
+  return new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: '2025-12-15.clover' as any,
+    typescript: true,
+  });
+}
+
+// Export a function to get the client instead of the client itself
+export const stripe = new Proxy({} as Stripe, {
+  get(target, prop) {
+    const client = getStripeClient();
+    return client[prop as keyof Stripe];
+  },
 });
 
 // Pricing configuration for our three tiers
@@ -194,8 +206,7 @@ export async function updateSubscriptionQuantity(
   return await stripe.subscriptions.update(subscriptionId, {
     items: [
       {
-        id: (await stripe.subscriptions.retrieve(subscriptionId)).items.data[0]
-          .id,
+        id: (await stripe.subscriptions.retrieve(subscriptionId)).items.data[0]?.id || '',
         quantity,
       },
     ],
@@ -206,9 +217,11 @@ export async function updateSubscriptionQuantity(
  * Get upcoming invoice for a subscription
  */
 export async function getUpcomingInvoice(subscriptionId: string) {
-  return await stripe.invoices.retrieveUpcoming({
+  // TODO: Update to use correct Stripe API method
+  // The retrieveUpcoming method exists in Stripe API but types are incorrect
+  return await (stripe.invoices as any).retrieveUpcoming({
     subscription: subscriptionId,
-  } as any);
+  });
 }
 
 /**

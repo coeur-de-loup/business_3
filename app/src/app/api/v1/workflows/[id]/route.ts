@@ -53,13 +53,14 @@ const updateWorkflowSchema = z.object({
 // GET /api/v1/workflows/:id - Get workflow details
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   return withAuth(async (userId, organizationId) => {
     try {
+      const { id } = await params;
       const workflow = await prisma.workflow.findFirst({
         where: {
-          id: params.id,
+          id,
           organizationId,
         },
         include: {
@@ -107,10 +108,11 @@ export async function GET(
 // PATCH /api/v1/workflows/:id - Update workflow
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   return withAuth(async (userId, organizationId) => {
     try {
+      const { id } = await params;
       // Validate request body
       const bodyResult = await validateBody<UpdateWorkflowRequest>(
         await request.json(),
@@ -126,7 +128,7 @@ export async function PATCH(
       // Check if workflow exists and belongs to organization
       const existingWorkflow = await prisma.workflow.findFirst({
         where: {
-          id: params.id,
+          id,
           organizationId,
         },
       });
@@ -137,7 +139,7 @@ export async function PATCH(
 
       // Update workflow
       const workflow = await prisma.workflow.update({
-        where: { id: params.id },
+        where: { id },
         data: {
           ...(data.name && { name: data.name }),
           ...(data.description !== undefined && { description: data.description }),
@@ -188,14 +190,15 @@ export async function PATCH(
 // DELETE /api/v1/workflows/:id - Delete workflow
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   return withAuth(async (userId, organizationId) => {
     try {
+      const { id } = await params;
       // Check if workflow exists and belongs to organization
       const existingWorkflow = await prisma.workflow.findFirst({
         where: {
-          id: params.id,
+          id,
           organizationId,
         },
       });
@@ -206,7 +209,7 @@ export async function DELETE(
 
       // Delete workflow (cascade will delete executions and logs)
       await prisma.workflow.delete({
-        where: { id: params.id },
+        where: { id },
       });
 
       return apiSuccess({ message: 'Workflow deleted successfully' });

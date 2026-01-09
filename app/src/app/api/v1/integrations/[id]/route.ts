@@ -18,13 +18,14 @@ import type { IntegrationResponse } from '@/types/api';
 // GET /api/v1/integrations/:id - Get integration details
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   return withAuth(async (userId, organizationId) => {
     try {
+      const { id } = await params;
       const integration = await prisma.integration.findFirst({
         where: {
-          id: params.id,
+          id,
           organizationId,
         },
       });
@@ -52,14 +53,15 @@ export async function GET(
 // DELETE /api/v1/integrations/:id - Delete integration
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   return withAuth(async (userId, organizationId) => {
     try {
+      const { id } = await params;
       // Check if integration exists and belongs to organization
       const existingIntegration = await prisma.integration.findFirst({
         where: {
-          id: params.id,
+          id,
           organizationId,
         },
       });
@@ -70,7 +72,7 @@ export async function DELETE(
 
       // Delete integration
       await prisma.integration.delete({
-        where: { id: params.id },
+        where: { id },
       });
 
       return apiSuccess({ message: 'Integration deleted successfully' });

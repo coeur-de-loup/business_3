@@ -23,6 +23,9 @@ const checkoutSchema = z.object({
   plan: z.enum(['STARTER', 'PROFESSIONAL', 'ENTERPRISE']),
 });
 
+// Prevent static optimization (requires runtime env vars)
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
   try {
     // Get authenticated user

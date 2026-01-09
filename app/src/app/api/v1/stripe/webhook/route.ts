@@ -16,6 +16,9 @@ import { headers } from 'next/headers';
 import stripe, { constructWebhookEvent } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
 
+// Prevent static optimization (requires runtime env vars)
+export const dynamic = 'force-dynamic';
+
 // Type definitions for Stripe webhook events
 type StripeCheckoutSession = {
   id: string;
@@ -101,7 +104,7 @@ export async function POST(req: NextRequest) {
     const handler = webhookHandlers[event.type as keyof typeof webhookHandlers];
 
     if (handler) {
-      await handler(event.data.object);
+      await handler(event.data.object as any);
       console.log(`✅ Handled webhook: ${event.type}`);
     } else {
       console.log(`⚠️  No handler for webhook: ${event.type}`);
@@ -171,13 +174,13 @@ async function handleSubscriptionCreated(subscription: StripeSubscription) {
     create: {
       organizationId: organization.id,
       stripeSubscriptionId: subscription.id,
-      stripePriceId: subscription.items.data[0].price.id,
+      stripePriceId: subscription.items.data[0]?.price?.id || '',
       stripeCurrentPeriodEnd: new Date(subscription.current_period_end * 1000),
       plan,
       status: subscription.status.toUpperCase() as any,
-      amount: subscription.items.data[0].price.unit_amount || 0,
-      currency: subscription.items.data[0].price.currency,
-      billingInterval: subscription.items.data[0].recurring?.interval === 'year'
+      amount: subscription.items.data[0]?.price?.unit_amount || 0,
+      currency: subscription.items.data[0]?.price?.currency || 'usd',
+      billingInterval: (subscription.items.data[0] as any)?.recurring?.interval === 'year'
         ? 'YEARLY'
         : 'MONTHLY',
       trialStart: subscription.trial_start ? new Date(subscription.trial_start * 1000) : null,
@@ -345,9 +348,5 @@ async function handleInvoicePaymentFailed(invoice: StripeInvoice) {
   // Stripe will retry 3 times over ~3 weeks before cancelling
 }
 
-// Enable webhook verification (disable for local testing without Stripe CLI)
-export const config = {
-  api: {
-    bodyParser: false, // Keep raw body for signature verification
-  },
-};
+// Note: In Next.js 15+, body parsing is handled automatically for webhooks
+// The raw body is available via request.text() for signature verification

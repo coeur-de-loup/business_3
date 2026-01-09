@@ -11,14 +11,15 @@ import type { ExecutionResponse, PaginatedResponse } from '@/types/api';
 // GET /api/v1/workflows/:id/executions - Get workflow execution history
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   return withAuth(async (userId, organizationId) => {
     try {
+      const { id } = await params;
       // Check if workflow exists and belongs to organization
       const workflow = await prisma.workflow.findFirst({
         where: {
-          id: params.id,
+          id,
           organizationId,
         },
       });
@@ -32,7 +33,7 @@ export async function GET(
       const [executions, total] = await Promise.all([
         prisma.execution.findMany({
           where: {
-            workflowId: params.id,
+            workflowId: id,
           },
           include: {
             workflow: {
@@ -57,7 +58,7 @@ export async function GET(
         }),
         prisma.execution.count({
           where: {
-            workflowId: params.id,
+            workflowId: id,
           },
         }),
       ]);

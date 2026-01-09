@@ -10,13 +10,14 @@ import { withAuth, apiSuccess, apiError, handleApiError } from '@/lib/api-utils'
 // POST /api/v1/templates/:id/use - Use template to create workflow
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   return withAuth(async (userId, organizationId) => {
     try {
+      const { id } = await params;
       // Get template
       const template = await prisma.template.findUnique({
-        where: { id: params.id },
+        where: { id },
       });
 
       if (!template) {
@@ -38,7 +39,7 @@ export async function POST(
 
       // Increment template popularity
       await prisma.template.update({
-        where: { id: params.id },
+        where: { id },
         data: {
           popularity: {
             increment: 1,

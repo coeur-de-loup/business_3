@@ -11,14 +11,15 @@ import type { ExecutionResponse } from '@/types/api';
 // POST /api/v1/workflows/:id/execute - Trigger workflow execution
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   return withAuth(async (userId, organizationId) => {
     try {
+      const { id } = await params;
       // Check if workflow exists and belongs to organization
       const workflow = await prisma.workflow.findFirst({
         where: {
-          id: params.id,
+          id,
           organizationId,
         },
       });
@@ -34,7 +35,7 @@ export async function POST(
       // Create execution record
       const execution = await prisma.execution.create({
         data: {
-          workflowId: params.id,
+          workflowId: id,
           userId,
           status: 'PENDING',
           triggeredBy: 'MANUAL',

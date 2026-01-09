@@ -18,6 +18,9 @@ import { getServerSession } from '@/lib/auth';
 import { createPortalSession } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
 
+// Prevent static optimization (requires runtime env vars)
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
   try {
     // Get authenticated user
