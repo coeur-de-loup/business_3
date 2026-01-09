@@ -5,8 +5,8 @@ agent: auto
 agent_priority:
   - acp
 prompt_file: main_prompt.md
-max_iterations: 100
-max_runtime: 14400
+max_iterations: 100000
+max_runtime: 999999999
 verbose: true
 
 # Adapter configurations
