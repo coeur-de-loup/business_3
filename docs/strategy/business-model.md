@@ -1,18 +1,18 @@
-# Business Model Canvas: SMB AI Orchestration Platform
+# Business Model Canvas: Client Portal SaaS for Agencies
 
-**Date:** January 8, 2026
-**Status:** Draft - Post-Validation
+**Date:** January 9, 2026
+**Status:** Draft - Based on Validated Pain Points
 **Confidence:** High
 
 ---
 
 ## Executive Summary
 
-**Value Proposition:** The first AI orchestration platform built specifically for non-technical small businesses, replacing 5-10 fragmented AI tools with one unified platform at 1/5th the cost.
+**Value Proposition:** A branded client communication and project management hub that replaces scattered communication (email, Slack, phone), chaotic file sharing, and fragmented feedback loops with one centralized, white-label portal that both agencies and clients will actually use.
 
-**Business Model:** B2B SaaS subscription with tiered pricing, hands-on implementation support, and platform revenue from AI model partners.
+**Business Model:** B2B SaaS subscription with tiered pricing, targeting agency owners and consultants who are losing 10-20 hours/week to communication fragmentation and project management chaos.
 
-**Profitability Path:** Month 18-24 with $2.7M LTV, $250-500 CAC, and 5.4:1 to 10.8:1 LTV:CAC ratio.
+**Profitability Path:** Month 6-9 with $1,000/month profit goal, solo-maintainable operations, and $29-99/month pricing to minimize customer count while maximizing value per customer.
 
 ---
 
@@ -20,103 +20,141 @@
 
 ### Primary Value Propositions
 
-**For "Overwhelmed Operators" (5-20 employee businesses):**
+**For "Overwhelmed Agency Owners" (3-20 employee agencies):**
 
-1. **Consolidation & Simplicity:**
-   - Replace 5-10 AI subscriptions with 1 platform
-   - Reduce monthly software spend from $300-500 to $49-99
-   - Eliminate "tool switching" throughout the day
-   - One login, one dashboard, one invoice
+**1. Centralized Communication Hub:**
+   - Replace scattered email, Slack, phone, and text threads with ONE branded portal
+   - Single source of truth for all client communication
+   - Eliminate "I never got that message" excuses
+   - Keep all project context in one place
+   - Email notifications bring clients back to portal (no adoption friction)
 
-2. **No-Code Automation:**
-   - Prebuilt templates for common workflows (no technical skills required)
-   - Drag-and-drop workflow builder
-   - "Done-with-you" onboarding and setup
-   - Industry-specific workflows (marketing agencies, consulting, e-commerce)
+**2. File Sharing Sanity:**
+   - Upload files directly to client portal (version control built-in)
+   - No more "Which version is final?" confusion
+   - Clients always see latest deliverables
+   - Replace WeTransfer, Google Drive links, and email attachments
+   - Professional impression on clients
 
-3. **Cost Savings:**
-   - Save $200-500/month on AI tool subscriptions
-   - Predictable flat pricing (no usage-based bill shock)
-   - ROI within 30-60 days
-   - Eliminate 30-40% waste on unused tools
+**3. Feedback & Revision Management:**
+   - Centralized feedback threads (no more scattered email comments)
+   - Clear revision history and approval tracking
+   - Clients comment directly on files/projects
+   - Eliminate "I already told you that" frustrations
+   - Reduce revision cycles by 30-50%
 
-4. **Implementation Support:**
-   - Concierge onboarding for first 100 customers
-   - Video tutorials and walkthroughs
-   - Human support (chat/email, not just documentation)
-   - Template library for quick wins
+**4. Project Visibility for Both Sides:**
+   - Clients see real-time project status, milestones, and timelines
+   - Eliminate 50% of "what's the status?" inquiries
+   - Agency owners see all client work in one dashboard
+   - Proactive vs. reactive project management
+   - Reduce emergency fire-drills
+
+**5. White-Label Branding:**
+   - Portal looks like YOUR agency (not a third-party tool)
+   - Builds client trust and professionalism
+   - Clients feel like they're logging into "your system"
+   - No confusing tool adoption for clients
+
+**6. Simplify Client Communication:**
+   - One login for clients (not 5 different tools)
+   - Email notifications drive engagement (no training needed)
+   - Mobile-friendly (clients check on phone)
+   - Replace chaotic email chains with organized threads
 
 ### Secondary Value Propositions
 
-5. **Team Adoption:**
-   - Tools so simple non-technical staff use them
-   - Quick wins that build confidence
-   - Visible time savings and productivity gains
+**7. Time Savings:**
+   - Save 10-20 hours/week on communication management
+   - Reduce time spent resending files and clarifying feedback
+   - Fewer status update meetings
+   - Faster project delivery
 
-6. **Security & Reliability:**
-   - SOC 2 compliance (planned)
-   - Data privacy transparency
-   - Enterprise-grade uptime and support
+**8. Reduced Scope Creep:**
+   - Documented project milestones and deliverables
+   - Clear approval workflows
+   - "Out of scope" requests are visible
+   - Easier to have boundary conversations
+
+**9. Professional Image:**
+   - Clients perceive agency as more organized
+   - Competitive advantage over disorganized competitors
+   - Higher trust and credibility
+   - Justifies premium pricing
+
+**10. Business Continuity:**
+   - If owner gets sick or team member leaves, nothing lost
+   - No tribal knowledge buried in personal email
+   - Easy to bring new team members up to speed
+   - Agency becomes more scalable
 
 ---
 
 ## 2. Customer Segments
 
-### Primary Segment: "Overwhelmed Operators" (70% of target market)
+### Primary Segment: "Overwhelmed Agency Owners" (70% of target market)
 
 **Demographics:**
-- **Business Size:** 5-20 employees (sweet spot: 5-10)
-- **Revenue:** $500K - $5M annually
-- **Industry:**
-  - Marketing agencies (30%)
-  - Consulting/professional services (25%)
-  - E-commerce (20%)
-  - Real estate (15%)
-  - Other service businesses (10%)
-- **Technical Skill:** Low to medium (comfortable with SaaS, not developers)
-- **AI Maturity:** Early adopters using ChatGPT/Claude personally, want to deploy in business
+- **Business Type:** Digital agencies, marketing agencies, design studios, consulting firms
+- **Size:** 3-20 employees (sweet spot: 5-10 employees)
+- **Revenue:** $200K - $2M annually
+- **Active Clients:** 5-30 concurrent clients
+- **Industries:**
+  - Digital marketing agencies (35%)
+  - Design/creative agencies (25%)
+  - Consulting firms (20%)
+  - Web development agencies (15%)
+  - Other service businesses (5%)
+- **Current Tools:** Using email, Slack, Google Drive, Asana/Trello, multiple ad-hoc tools
+- **Pain Intensity:** HIGH - actively losing billable hours to communication chaos
 
 **Psychographics:**
-- Overwhelmed by AI tool proliferation
-- Frustrated by subscription costs and complexity
-- Time-poor (wearing multiple hats)
-- Value simplicity over extensive features
-- Willing to pay for solutions that "just work"
-- Prefer "done-with-you" over DIY
+- Drowning in client communication across multiple channels
+- Embarrassed by disorganized file sharing (lost files, version control issues)
+- Frustrated by "I never saw that email" conversations
+- Tired of chasing clients for feedback
+- Feeling unprofessional despite good work
+- Worried about losing clients due to communication issues
+- Wanting to scale but current processes don't support growth
+- Willing to pay for "done-for-you" simplicity
 
 **Buying Behavior:**
-- Research via Reddit, peer recommendations, search
-- Require free trial to experience value
-- Prefer monthly subscriptions over annual commitments
-- Decision-maker: Founder/Owner or COO
-- Sales cycle: 2-4 weeks
+- Founders/owners make purchasing decisions
+- Research via peer recommendations, Reddit, Twitter, direct search
+- Require free trial to test with real clients
+- Sales cycle: 1-4 weeks (decision-makers, want to test before committing)
+- Prefer monthly subscriptions over annual commitments early on
+- Price-sensitive but will pay for ROI (time savings = money)
 
-### Secondary Segment: "Growing Teams" (20% of target market)
+### Secondary Segment: "Independent Consultants" (20% of target market)
 
 **Demographics:**
-- **Business Size:** 20-50 employees
-- **Revenue:** $5M - $20M annually
-- **Need:** Team collaboration, advanced workflows, custom integrations
-- **Willingness to Pay:** Higher ($99-199/month)
+- **Business Type:** Independent consultants, freelancers with multiple clients
+- **Size:** 1-3 people (solo + contractor support)
+- **Revenue:** $100K - $500K annually
+- **Active Clients:** 5-15 concurrent clients
+- **Need:** Look professional, stay organized, scale without hiring
 
 **Why They Choose Us:**
-- Outgrown consumer tools, enterprise tools too expensive
-- Need team features and permissions
-- Want scalable platform that grows with them
-- Value implementation support
+- Can't afford enterprise tools ($200+/month)
+- Google Drive + email is becoming unmanageable
+- Want to impress clients and appear larger
+- Need to systematize to take on more clients
+- Lower price point ($29-49/month) fits budget
 
-### Tertiary Segment: "Agency Implementers" (10% of target market)
+### Tertiary Segment: "Growing Agencies" (10% of target market)
 
 **Demographics:**
-- Digital agencies, consultants, freelancers
-- Manage AI workflows for multiple clients
-- Need white-label or multi-tenant capabilities
-- Higher willingness to pay ($149-299/month)
+- **Business Type:** Agencies scaling from 10 to 50 employees
+- **Revenue:** $2M - $10M annually
+- **Active Clients:** 30-100 concurrent clients
+- **Need:** Team collaboration, advanced permissions, reporting
 
-**Future Opportunity:**
-- Partner/Reseller program
-- Revenue share on client implementations
-- Certification and training program
+**Why They Choose Us:**
+- Current tools (Basecamp, Asana, Slack) are too complex for clients
+- Clients refuse to adopt complex systems
+- Want simple, white-labeled client-facing portal
+- Will pay higher tier ($99/month) for team features
 
 ---
 
@@ -124,391 +162,376 @@
 
 ### Customer Acquisition Channels (Launch Phase - Months 1-6)
 
-1. **Content Marketing (Primary Channel - 40% of customers):**
-   - Blog: "AI tool consolidation guides," "workflow tutorials"
-   - YouTube: "How to automate [specific business process] with AI"
-   - Case studies: "How [business] saved $400/month with AI orchestration"
-   - SEO strategy: Rank for "AI tools for [industry]," "AI automation platform"
+**1. Content Marketing (Primary Channel - 50% of customers):**
+- Blog posts: "How to organize client communication," "File sharing best practices"
+- Case studies: "How [agency] saved 15 hours/week with client portals"
+- Video content: "Client portal setup tutorial," "Before/after workflow comparison"
+- SEO: Rank for "client portal for agencies," "client communication tools," "project management for consultants"
+- Lead magnet: "Client Communication Audit Checklist" → email capture
 
-2. **Community Engagement (25% of customers):**
-   - Reddit: r/smallbusiness, r/Entrepreneur, r/SaaS, r/AiForSmallBusiness
-   - Indie Hackers: Share journey, build in public
-   - LinkedIn: SMB groups, founder communities
-   - Twitter/X: AI and SaaS communities
-   - Product Hunt: Launch for initial traction
+**2. Community Engagement (30% of customers):**
+- Reddit: r/agencies, r/consulting, r/freelance, r/webdev
+- Twitter/X: Agency owner communities, #agencylife
+- Indie Hackers: Share build-in-public journey
+- Facebook Groups: Agency owner groups, consultant communities
+- LinkedIn: Agency groups, share insights, not direct pitching
 
-3. **Product-Led Growth (20% of customers):**
-   - Free tier (limited to 3 workflows, 1 integration)
-   - Viral features: "Share workflow templates" with colleagues
-   - Referral program: "Get 1 month free for each referral"
-   - In-app prompts: "Invite team members"
+**3. Product-Led Growth (15% of customers):**
+- Free trial (14 days, full features)
+- Clients see the portal → "I want this for my business" (virality)
+- Referral program: "Get 1 month free for each referral"
+- In-app prompts: "Invite your team members"
 
-4. **Paid Acquisition (15% of customers - Phase 2, Months 7-12):**
-   - Google Ads: "AI automation platform," "consolidate AI tools"
-   - LinkedIn Ads: Target founders, COOs, operations managers
-   - Retargeting: Visitors who didn't convert from free trial
-   - Budget: $50-100/month initially, scale based on CAC:LTV
+**4. Direct Outreach (5% of customers):**
+- Cold email to agencies with clear pain points
+- Personalized video Loom messages: "I built this to solve X"
+- Target: Agencies complaining on Twitter/Reddit about client communication chaos
+- Limited scale, high intent
 
 ### Customer Retention Channels
 
-1. **Customer Success:**
-   - Onboarding email sequence (5 emails over 30 days)
-   - Monthly check-in calls for first 3 months
-   - Quarterly business reviews for enterprise customers
-   - In-app notifications: "New template available for your industry"
+**1. Onboarding Success:**
+- Setup wizard: Create first client portal in 5 minutes
+- Email templates: "Invite your clients to your portal" copy-paste templates
+- Video tutorials: "How to onboard your first client"
+- Goal: First client invited within 24 hours
 
-2. **Community Building:**
-   - Private Slack/Discord community for customers
-   - Monthly "workflow showcase" webinars
-   - Template library: User-generated workflows (reward contributors)
+**2. Ongoing Engagement:**
+- Monthly tips: "How to get clients to actually use your portal"
+- New feature announcements (keep it simple)
+- Customer spotlight: "How [agency] uses client portals to reduce meetings"
+- Quick check-in emails (not automated, personal)
 
-3. **Educational Content:**
-   - Weekly email: "AI workflow tip of the week"
-   - Video tutorials: Advanced workflows, use cases
-   - Blog: Industry-specific AI automation guides
+**3. Community Building:**
+- Private Slack/Discord for agency owners (peer support)
+- Monthly "Client Communication Best Practices" webinar
+- Template sharing: Portal setup templates for different industries
 
 ---
 
 ## 4. Customer Relationships
 
-### Relationship Type: "Guided Self-Service"
+### Relationship Type: "Self-Service with Setup Support"
 
 **What This Means:**
-- Product is self-service (no sales team required for 90% of customers)
-- BUT: Heavy emphasis on guidance, education, and support
-- Hybrid of "product-led growth" + "high-touch onboarding"
+- Product is designed to be self-service (no sales calls needed)
+- Heavy focus on smooth onboarding and quick wins
+- Email/chat support (not phone initially)
+- Templates and examples to reduce support burden
 
 ### Relationship Stages
 
 **1. Acquisition: Trust-Building**
-- Transparent pricing (no "contact sales")
+- Transparent pricing ($29-99/month, no hidden fees)
 - Free 14-day trial with instant value
 - Money-back guarantee (30 days)
-- Educational content: "How to automate X in 10 minutes"
+- Educational content: "Why client portals reduce revision cycles"
 
-**2. Onboarding: Done-With-You**
-- Personalized onboarding call (optional but recommended)
-- Setup wizard: "Select your industry, we'll recommend templates"
-- Video walkthroughs, not just text docs
-- Concierge migration help: "We'll import your workflows from Zapier"
-- Goal: First workflow live in <1 hour
+**2. Onboarding: Quick-Start Templates**
+- Industry-specific templates (marketing agency, design studio, consulting)
+- "Copy my workflow" examples from successful agencies
+- Video walkthroughs (5-minute setup)
+- Email support (24-hour response)
+- Goal: First client portal live in <30 minutes
 
-**3. Activation: Quick Wins**
-- Template library: 50+ prebuilt workflows
-- "Success checklist": 5 workflows to set up in week 1
-- In-app prompts: "Try this workflow to save 2 hours/week"
-- Celebrate milestones: "You've automated 10 workflows!"
+**3. Activation: Client Adoption**
+- Email invitation templates (personalized for your clients)
+- "How to get clients to actually use it" guide
+- Success checklist: 3 things to do in week 1
+- Celebrate wins: "Your first client logged in!"
 
-**4. Retention: Ongoing Value**
-- Monthly "automation tip" emails
-- New template notifications (relevant to their industry)
-- Customer success manager (for Professional/Enterprise tiers)
-- Quarterly business reviews (Enterprise tier)
+**4. Retention: Value Reinforcement**
+- Monthly "time saved" reports (show agency ROI)
+- New feature announcements (rare, only high-impact features)
+- Quarterly check-in emails (personal, not automated)
+- Upgrade prompts based on usage ("You have 12 clients, upgrade to Professional")
 
 **5. Expansion: Grow Together**
-- Upgrade prompts based on usage: "You're hitting workflow limits, upgrade?"
-- New feature announcements
-- Case studies: "How customers like you scaled"
-- Referral incentives: "Get 1 month free for each referral"
+- Case studies: "How agencies scaled with client portals"
+- Feature announcements for higher tiers
+- Referral incentives: "Get 1 month free per referral"
 
 ### Support Levels
 
-**Free/Starter Tier:**
-- Email support (24-hour response time)
+**Starter Tier ($29-49/month):**
+- Email support (24-hour response)
+- Help center with tutorials
+- Video guides
 - Community Slack/Discord
-- Self-service knowledge base
-- Video tutorials
 
-**Professional Tier:**
-- Chat support (4-hour response time)
-- Priority email support
-- Monthly check-in calls (first 3 months)
-- Template customization help
+**Professional Tier ($79-99/month):**
+- Priority email support (12-hour response)
+- Shared screen setup sessions (monthly office hours)
+- Advanced templates
+- Feature request priority
 
-**Enterprise Tier:**
-- Dedicated customer success manager
-- Phone support
-- Custom workflow building assistance
-- SLA guarantees
-- On-premise deployment option
+**Agency Tier (Custom - $149+/month):**
+- Dedicated onboarding call (one-time)
+- Custom portal setup assistance
+- Priority support (6-hour response)
+- Custom feature requests considered
 
 ---
 
 ## 5. Revenue Streams
 
-### Primary Revenue: SaaS Subscriptions (85% of total revenue)
+### Primary Revenue: SaaS Subscriptions (100% of revenue)
 
-**Tier 1: Starter ($49/month)**
-- Target: 1-5 employee businesses
-- Features: 5 workflows, 3 integrations, 2 users, 50 templates
-- Limitations: No custom workflows, email support only
-- Expected Mix: 60% of customers
+**Tier 1: Starter - $29/month**
+- Target: Freelancers, solo consultants, 1-3 active clients
+- Features:
+  - 3 active client portals
+  - Basic messaging and file sharing
+  - 5GB storage
+  - Email notifications
+  - White-label branding (your domain/logo)
+  - Email support (24-hour response)
+- Expected Mix: 40% of customers
 
-**Tier 2: Professional ($99/month)**
-- Target: 5-50 employee businesses
-- Features: 25 workflows, 10 integrations, unlimited users, 150+ templates, custom workflows, priority support
-- Expected Mix: 35% of customers
+**Tier 2: Professional - $79/month**
+- Target: Small agencies, 5-25 active clients
+- Features:
+  - 25 active client portals
+  - Advanced messaging (threads, file comments)
+  - 50GB storage
+  - Project milestones and timeline tracking
+  - Feedback and approval workflows
+  - Team member access (2-5 team members)
+  - Priority email support (12-hour response)
+  - Advanced templates
+- Expected Mix: 50% of customers (sweet spot tier)
 
-**Tier 3: Enterprise (Custom pricing - starting at $299/month)**
-- Target: 50+ employee businesses or high-volume usage
-- Features: Unlimited workflows, custom integrations, dedicated support, SLA, SSO, on-premise option
-- Expected Mix: 5% of customers
+**Tier 3: Agency - $149/month**
+- Target: Growing agencies, 25-100 active clients
+- Features:
+  - Unlimited client portals
+  - Unlimited storage
+  - Unlimited team members
+  - Advanced permissions and roles
+  - Custom branding (full white-label)
+  - Priority support (6-hour response)
+  - Custom setup assistance
+  - Analytics and reporting
+- Expected Mix: 10% of customers
 
-**Revenue Model Assumptions:**
-- Average Revenue Per Customer (ARPC): $75/month
-- Target pricing capture rate: 60% Starter, 35% Professional, 5% Enterprise
-- Billing: Monthly subscriptions (annual optional with 20% discount)
-- Churn target: <5% monthly (net revenue retention >100%)
+**Average Revenue Per Customer (ARPC):**
+- Weighted average: $68/month
+- Conservative: $60/month
+- Goal: $1,000/month profit = ~15-18 customers
 
-### Secondary Revenue: Implementation Services (10% of total revenue)
+### Revenue Model Assumptions
 
-**One-Time Setup Fees:**
-- "Done-for-you" workflow setup: $500-2,000
-- Custom workflow building: $200-500 per workflow
-- Migration assistance: $300-1,000 (from Zapier, Make, etc.)
-- Training sessions: $150-300/hour
+**Pricing Philosophy:**
+- Premium pricing vs. DIY tools (Basecamp at $11/month)
+- Cheaper than enterprise tools (Moxo at $200+/month)
+- Position as "professional but affordable"
+- Fewer customers = less support burden = better margins
 
-**Expected Uptake:**
-- 20-30% of Professional tier customers purchase setup services
-- 50% of Enterprise customers purchase custom services
-- Average one-time revenue: $500 per customer (one-time)
+**Billing:**
+- Monthly subscriptions (default)
+- Annual option with 20% discount (future optimization)
+- No contracts, cancel anytime
+- Payment: Stripe subscription
 
-### Tertiary Revenue: Partner/Platform Revenue (5% of total revenue)
+**Churn Assumptions:**
+- Target: <5% monthly churn (industry leading)
+- Better target: 3-4% monthly
+- Net revenue retention goal: >100% (upsells offset churn)
 
-**AI Model Provider Revenue Share:**
-- Revenue share from AI API usage (OpenAI, Anthropic, etc.)
-- Expected: 5-10% of API spend as platform fee
-- Example: If customer uses $50/month of OpenAI API, we earn $2.50-5
-
-**Partner Program (Future - Months 12-24):**
-- Agencies/Consultants resell our platform
-- Revenue share: 20-30% of subscription revenue
-- Training and certification for partners
-
-### Revenue Projections (Year 1-3)
-
-**Year 1 (Months 1-12):**
-- 500 paying customers
-- MRR: $37,500 (500 × $75 ARPC)
-- ARR: $450,000
-- Implementation services: $50,000 one-time
-- Total Revenue Year 1: $500,000
-
-**Year 2:**
-- 2,500 paying customers
-- MRR: $187,500
-- ARR: $2,250,000
-- Implementation services: $250,000
-- Total Revenue Year 2: $2,500,000
-
-**Year 3:**
-- 10,000 paying customers
-- MRR: $750,000
-- ARR: $9,000,000
-- Implementation services: $1,000,000
-- Partner/platform revenue: $500,000
-- Total Revenue Year 3: $10,500,000
+**Upsell Path:**
+- Starter → Professional (when hit 3 client limit)
+- Professional → Agency (when hit 25 client limit)
+- Natural upgrades as agencies grow
 
 ---
 
 ## 6. Key Resources
 
-### Human Resources
+### Human Resources (Solo-First Model)
 
-**Phase 1 (Months 1-6):**
-- 1 Founder/CEO (Product, Strategy, Initial Support)
-- 1 Full-Stack Developer (MVP build)
-- 1 Part-Time Content Creator (Marketing, Community)
-- 1 Part-Time Customer Success (Onboarding, Support)
-- **Total:** 2.5 FTE, $15,000-25,000/month burn
+**Phase 1 (Months 1-6): Solo Founder**
+- 1 Founder/CEO (Product, Development, Support, Marketing)
+- Time allocation:
+  - 40%: Development (build MVP)
+  - 30%: Content and marketing
+  - 20%: Customer support
+  - 10%: Business operations
+- **Cost:** $0 (sweat equity, living expenses covered by savings)
 
-**Phase 2 (Months 7-12):**
+**Phase 2 (Months 7-12): First Hire (If Needed)**
+- 1 Founder/CEO (Product, Strategy)
+- 1 Part-Time Contractor (Customer support, 10-20 hours/week)
+- **Cost:** $1,000-2,000/month (contractor)
+- Trigger: $2,000+ MRR or support >15 hours/week
+
+**Phase 3 (Months 12-24): Small Team (If Profitable)**
 - 1 Founder/CEO
-- 2 Full-Stack Developers
-- 1 Content Marketer (Full-time)
-- 1 Customer Success Manager (Full-time)
-- 1 Part-Time Designer (UI/UX, Marketing materials)
-- **Total:** 4.5 FTE, $30,000-50,000/month burn
-
-**Phase 3 (Months 13-24):**
-- 1 Founder/CEO
-- 1 CTO/VPE
-- 4-5 Engineers (Full-stack, DevOps, ML)
-- 1 Content Marketer
-- 1 Growth Marketer (Paid acquisition)
-- 2 Customer Success Managers
-- 1 Designer
-- 1 Sales (Enterprise tier)
-- **Total:** 10-12 FTE, $75,000-125,000/month burn
+- 1 Full-time Developer
+- 1 Part-time Customer Success
+- **Cost:** $8,000-15,000/month
+- Trigger: $5,000+ MRR and sustainable growth
 
 ### Technical Resources
 
-**Core Technology Stack:**
-- Backend: Node.js/Python (API, workflow engine)
-- Frontend: React/Next.js (web app)
-- Database: PostgreSQL (user data, workflows, logs)
-- Infrastructure: AWS/GCP (hosting, CI/CD)
-- AI APIs: OpenAI, Anthropic Claude (LLM orchestration)
-- Integration APIs: Zapier/Make (for non-native integrations), native APIs for top 10 tools
+**Core Technology Stack (Keep It Simple):**
+- Frontend: Next.js 14 (App Router, React Server Components)
+- Backend: Next.js API Routes (no separate backend)
+- Database: PostgreSQL (hosted on Neon, Supabase, or Railway)
+- File Storage: AWS S3 or Cloudflare R2 (cheaper)
+- Authentication: NextAuth.js (email/password, magic links)
+- Email: Resend or SendGrid (transactional emails)
+- Payments: Stripe (subscriptions)
+- Deployment: Vercel or Railway (free tier initially)
 
-**Infrastructure:**
-- Development: Free tier cloud credits (AWS Activate, Google Cloud for Startups)
-- Production: $500-2,000/month (scaling with users)
-- Monitoring: Sentry (errors), Datadog (performance)
-- Analytics: Mixpanel/PostHog (user behavior)
+**Infrastructure Costs:**
+- Database: $0-25/month (Neon free tier, then Pro)
+- File Storage: $0-20/month (Cloudflare R2 is cheap)
+- Email: $0-20/month (Resend free tier, then pay-as-you-go)
+- Hosting: $0-20/month (Vercel free tier, then Pro)
+- Monitoring: $0 (Vercel Analytics, free Sentry tier)
+- **Total Infrastructure:** $0-85/month (scaling with users)
+
+**Development Tools:**
+- GitHub (free for public repo)
+- VS Code (free)
+- Figma (free tier)
+- **Total Tools:** $0/month initially
 
 ### Intellectual Resources
 
 **Proprietary Assets:**
-- Template library (50+ prebuilt workflows)
-- Integration code (connectors to 10+ business tools)
-- User data and workflow patterns (learn what works)
-- Brand and community (trust, reputation)
-
-**Knowledge Assets:**
-- Market research and customer insights
-- Best practices for AI workflow design
-- Industry-specific use case library
-- Onboarding and training materials
+- Portal templates (industry-specific: marketing, design, consulting)
+- Onboarding flow and copy
+- Client invitation email templates
+- Best practices documentation (agency operations)
+- Brand and domain
 
 ### Financial Resources
 
 **Capital Requirements:**
-- Bootstrap (Months 1-12): $50,000-100,000 personal savings
-- Seed Round (Months 13-24, if needed): $500K-1M for hiring and growth
-- Runway: 18-24 months to profitability
+- **Bootstrap:** Personal savings to cover living expenses during build (2-3 months)
+- **Launch Goal:** $1,000/month profit (not unicorn, not VC-funded)
+- **No Outside Investment Needed:**
+  - Solo-maintainable
+  - Low hosting costs
+  - Profitable at 15-20 customers
+  - No hiring needed until $2,000-5,000 MRR
 
-**Funding Strategy:**
-- Phase 1: Bootstrap, keep costs low, validate business model
-- Phase 2: Reinvest revenue, consider seed round if growth accelerated
-- Phase 3: Series A if scaling beyond $10M ARR
+**Runway:**
+- 3 months to build MVP (living expenses from savings)
+- Launch and validate
+- If no traction in 3 months, pivot or stop
 
 ---
 
 ## 7. Key Activities
 
-### Product Development (40% of time)
+### Product Development (50% of time - Months 1-3)
 
 **Core Activities:**
-- Workflow engine development (AI orchestration logic)
-- Integration development (connectors to business tools)
-- Template creation (prebuilt workflows for common use cases)
-- UI/UX design (simplicity for non-technical users)
-- Testing and quality assurance (reliability is critical)
-- Security and compliance (SOC 2, data privacy)
+- MVP development (core features only, no nice-to-haves)
+- Client portal creation (branded, white-label)
+- Messaging system (email notifications, threads)
+- File upload/download (S3 integration, version control)
+- Project organization (milestones, status)
+- Authentication and user management (agency owners, team members, clients)
+- Testing and reliability (critical: must work flawlessly)
 
 **Development Priorities:**
-- MVP (Months 1-3): 3-5 integrations, 10 templates, core workflow builder
-- V1.0 (Months 4-6): 10 integrations, 50 templates, team collaboration
-- V2.0 (Months 7-12): Advanced AI features, custom workflows, API access
+- Week 1-2: Database schema, authentication, basic portal
+- Week 3-4: Messaging, file upload, email notifications
+- Week 5-6: Project milestones, client invitation flow
+- Week 7-8: Polish, bug fixes, beta testing with friendly agencies
 
-### Customer Acquisition & Marketing (30% of time)
+**MVP Feature Set:**
+- ✅ Branded client portals (white-label)
+- ✅ Centralized messaging with email notifications
+- ✅ File upload/download with version control
+- ✅ Project milestones and status tracking
+- ✅ Client invitation system (magic link, no password)
+- ✅ Team member access (2-5 team members)
+- ❌ Out of scope: Mobile app, advanced analytics, custom workflows
+
+### Customer Acquisition & Marketing (30% of time - Ongoing)
 
 **Core Activities:**
-- Content creation (blog, videos, tutorials, case studies)
-- Community engagement (Reddit, Indie Hackers, LinkedIn, Twitter)
-- SEO optimization (rank for AI automation keywords)
-- Product Hunt launch and viral marketing
-- Paid acquisition experiments (Google Ads, LinkedIn Ads)
-- Partnership development (agencies, consultants, tool providers)
+- Content creation (blog posts, case studies, tutorials)
+- Community engagement (Reddit, Twitter, Indie Hackers)
+- Landing page optimization (clear value proposition, pricing)
+- SEO (write content that ranks)
+- Product Hunt launch preparation
+- Customer testimonials and case studies
 
 **Marketing Priorities:**
-- Months 1-2: Build audience, create content, launch landing page
-- Months 3-4: Product Hunt launch, viral campaign, customer interviews
-- Months 5-12: Scale content, test paid acquisition, optimize conversion
+- Months 1-2: Build audience, create content, pre-launch waitlist
+- Months 3-4: Product Hunt launch, customer interviews, testimonials
+- Months 5-12: Content marketing, community engagement, optimization
 
-### Customer Success & Support (20% of time)
+### Customer Success & Support (20% of time - Post-Launch)
 
 **Core Activities:**
-- Onboarding new customers (setup calls, migration help)
-- Customer support (email, chat, community)
-- Template customization (helping customers build workflows)
-- Success check-ins (ensure customers are getting value)
-- Churn prevention (identify at-risk customers, re-engage)
+- Customer onboarding (email support, setup guidance)
+- Bug fixes and technical issues (priority #1)
+- Feature requests (track, prioritize based on demand)
+- Customer feedback and interviews
+- Churn prevention (identify unhappy customers, help them)
 
 **Success Priorities:**
-- Response times: <4 hours for Professional tier, <24 hours for Starter
-- Onboarding goal: First workflow live in <1 hour
-- Retention goal: <5% monthly churn, >100% net revenue retention
+- Response time: <24 hours (email)
+- Bug fix time: <48 hours (critical bugs)
+- Feature request response: "We'll consider it" or "Not planned" (no false promises)
 
-### Business Operations (10% of time)
+### Business Operations (Minimal - Solo Founder)
 
 **Core Activities:**
-- Financial management (bookkeeping, budgeting, forecasting)
-- Legal and compliance (terms of service, privacy policy, SOC 2)
-- Hiring and team management (recruiting, onboarding, culture)
-- Strategic planning (roadmap, metrics, OKRs)
-- Investor relations (if raising capital)
+- Bookkeeping and financial tracking (spreadsheet initially)
+- Legal (terms of service, privacy policy - use templates)
+- Customer support (email, respond within 24 hours)
+- Strategic planning ( roadmap, metrics, goals)
 
 ---
 
 ## 8. Key Partnerships
 
-### AI Model Providers
-
-**Strategic Partnerships:**
-- **OpenAI:** Access to GPT-4 API for workflow automation
-- **Anthropic:** Access to Claude API for advanced reasoning
-- **Google Cloud:** Access to Gemini API and cloud infrastructure credits
-
-**Partnership Model:**
-- API access with usage-based pricing
-- Potential revenue share agreements (platform fees)
-- Co-marketing opportunities (case studies, joint webinars)
-- Technical support (priority access to new features)
-
-### Integration Partners
-
-**Top 10 Priority Integrations (MVP - Year 1):**
-1. **Google Workspace** (Gmail, Google Docs, Google Sheets)
-2. **Slack** (team communication)
-3. **HubSpot** (CRM, marketing automation)
-4. **Notion** (knowledge management)
-5. **Trello/Asana** (project management)
-6. **Zapier/Make** (for non-native integrations)
-7. **Stripe** (payment processing)
-8. **Mailchimp** (email marketing)
-9. **Calendly** (scheduling)
-10. **Salesforce** (CRM - Enterprise tier)
-
-**Integration Strategy:**
-- Native integrations for top 10 tools (better performance, deeper features)
-- Zapier/Make integration for long-tail tools (faster time to market)
-- API-first design (allows customers to build custom integrations)
-
-### Distribution Partners (Future - Months 12-24)
-
-**Agencies and Consultants:**
-- Digital marketing agencies (implement AI workflows for clients)
-- Business consultants (recommend AI automation platform)
-- Freelancers (build workflows as a service)
-
-**Partner Program Structure:**
-- 20-30% revenue share on referrals
-- Training and certification (become "AI automation expert")
-- White-label options (resell under agency brand)
-- Lead sharing (we send enterprise leads to partners)
-
 ### Technology Partners
 
 **Infrastructure Providers:**
-- **AWS/Google Cloud:** Hosting, CI/CD, developer credits
-- **Vercel:** Frontend hosting and deployment (if using Next.js)
-- **Supabase/Firebase:** Backend-as-a-service (accelerate development)
+- **Vercel:** Frontend hosting and deployment (free tier, then $20/month)
+- **Neon or Supabase:** PostgreSQL database hosting (free tier, then $25/month)
+- **Cloudflare R2:** File storage (much cheaper than S3, pay only for what you use)
+- **Resend:** Transactional emails (free tier, then pay-as-you-go)
+- **Stripe:** Payment processing (2.9% + $0.30 per transaction)
 
-**Developer Tools:**
-- **Sentry:** Error monitoring and alerting
-- **Datadog/New Relic:** Application performance monitoring
-- **Mixpanel/PostHog:** User analytics and behavior tracking
-- **Linear:** Project management and issue tracking
+**Why These Partners:**
+- All have free tiers for launch
+- Scale with you (pay as you grow)
+- Developer-friendly (fast integration)
+- Reliable and secure
 
-### Advisory Partners
+### Integration Partners (Future - Months 6-12+)
 
-**Strategic Advisors:**
-- AI/ML experts (guidance on technical architecture)
-- SaaS founders (mentorship on scaling)
-- SMB business owners (customer insights, feedback)
-- Investors (guidance on fundraising, if applicable)
+**Potential Integrations (If Customer Demand):**
+- **Slack:** Notifications when clients message in portal
+- **Google Drive:** Sync files to client portal
+- **Zapier:** Connect to other tools (automation)
+- **Asana/Trello:** Sync project milestones
+
+**Integration Philosophy:**
+- Don't build integrations until customers ask
+- Keep it simple (core features first)
+- Use Zapier/Make for custom integrations (don't build native)
+
+### Advisory and Support
+
+**Peer Network:**
+- Other solo founders (Indie Hackers, Twitter)
+- Agency owner communities (feedback, insights)
+- Technical mentors (if needed)
+
+**No Formal Partnerships Needed:**
+- No co-marketing deals initially
+- No reseller programs
+- No enterprise partnerships (yet)
 
 ---
 
@@ -516,66 +539,82 @@
 
 ### Fixed Costs (Monthly)
 
-**Phase 1 (Months 1-6):**
-- Personnel (2.5 FTE): $15,000-25,000/month
-- Software tools: $500-1,000/month (GitHub, Figma, Notion, Slack, etc.)
-- Infrastructure: $100-500/month (AWS/GCP free tier)
-- **Total Fixed Costs: $15,600-26,500/month**
+**Phase 1 (Months 1-6 - Solo Founder, MVP Build):**
+- **Personnel:** $0 (founder living expenses from savings)
+- **Software & Tools:** $0/month (use free tiers)
+  - Vercel: $0 (free tier)
+  - Neon Database: $0 (free tier)
+  - Cloudflare R2: $0-5/month (minimal storage)
+  - Resend Email: $0-10/month (free tier covers initial volume)
+  - GitHub: $0 (public repo)
+  - Stripe: $0 (pay-as-you-go transaction fees)
+- **Total Fixed Costs:** $0-15/month
 
-**Phase 2 (Months 7-12):**
-- Personnel (4.5 FTE): $30,000-50,000/month
-- Software tools: $1,000-2,000/month
-- Infrastructure: $500-2,000/month
-- **Total Fixed Costs: $31,500-54,000/month**
+**Phase 2 (Months 7-12 - Post-Launch, Growing):**
+- **Personnel:** $0-2,000/month (if hire part-time contractor)
+- **Software & Tools:** $50-100/month
+  - Vercel Pro: $20/month
+  - Neon Pro: $25/month
+  - Cloudflare R2: $10-30/month (scales with storage)
+  - Resend Email: $20-50/month (scales with emails sent)
+  - Domain: $1/month
+- **Total Fixed Costs:** $50-2,100/month (depending on hiring)
 
-**Phase 3 (Months 13-24):**
-- Personnel (10-12 FTE): $75,000-125,000/month
-- Software tools: $2,000-5,000/month
-- Infrastructure: $2,000-10,000/month
-- Office (optional): $2,000-5,000/month
-- **Total Fixed Costs: $81,000-145,000/month**
+**Phase 3 (Months 12-24 - Profitable, Optional Hiring):**
+- **Personnel:** $8,000-15,000/month (small team)
+- **Software & Tools:** $200-500/month (scales with users)
+- **Total Fixed Costs:** $8,200-15,500/month
 
 ### Variable Costs (Per Customer)
 
 **Cost Per Customer (CPC):**
-- Hosting and infrastructure: $5-15/month (scales with usage)
-- AI API costs: $10-30/month (OpenAI, Claude API usage)
-- Support costs: $5-10/month (customer success time)
-- Payment processing: $1.50-3/month (Stripe fees: 2.9% + $0.30)
-- **Total Variable Costs: $21.50-58/month per customer**
+- **Hosting and Infrastructure:** $2-5/month (scales with usage)
+- **File Storage:** $1-3/month (Cloudflare R2 is cheap: $0.015/GB)
+- **Email Sending:** $0.50-2/month (transactional emails)
+- **Payment Processing:** $0.90-1/month (Stripe fees: 2.9% + $0.30 on $29-99)
+- **Support:** $2-5/month (founder time, or contractor time)
+- **Total Variable Costs:** $6.40-16/month per customer
 
 **Gross Margin Analysis:**
-- ARPC: $75/month
-- Variable costs: $21.50-58/month
-- **Gross margin: $17-53.50/month (23-71% gross margin)**
-- Target gross margin: 60-70% (optimizing for efficiency at scale)
+- **ARPC:** $68/month (weighted average)
+- **Variable costs:** $6.40-16/month
+- **Gross margin:** $52-61.60/month (76-90% gross margin)
+- **Target gross margin:** 80%+ (excellent for B2B SaaS)
 
 ### Customer Acquisition Costs (CAC)
 
 **CAC Assumptions:**
-- Content marketing: $250-500/customer (time and tools)
-- Paid acquisition: $300-600/customer (ad spend)
-- Product-led growth: $100-300/customer (referrals, virality)
-- Weighted average CAC: $250-500/customer
+- **Content marketing:** $50-150/customer (time only, no ad spend)
+- **Product-led growth:** $20-50/customer (referrals, virality)
+- **Community engagement:** $30-100/customer (time in Reddit, Twitter)
+- **Weighted average CAC:** $40-100/customer (very low due to organic focus)
 
 **CAC Payback Period:**
-- CAC: $250-500
-- ARPC: $75/month
-- Gross margin: ~$45/month (60%)
-- Payback period: 5.6-11.1 months
-- Target: <12 months (healthy for B2B SaaS)
+- **CAC:** $40-100
+- **ARPC:** $68/month
+- **Gross margin:** ~$55/month (80%)
+- **Payback period:** 0.7-1.8 months (EXCELLENT - recoup acquisition cost in <2 months)
+
+**Why CAC is So Low:**
+- No paid advertising initially
+- Content-led growth (organic traffic)
+- Product-led growth (referrals)
+- Community engagement (free channels)
+- High-intent customers (agencies actively seeking solution)
 
 ### Churn Costs
 
-**Monthly Churn Target: <5%**
-- Annual churn: ~50% (if 5% monthly, though retention improves over time)
-- Better target: 3-4% monthly (industry leading for SMB SaaS)
-- Net revenue retention goal: >100% (upsells and expansions offset churn)
+**Monthly Churn Target: <3-4%**
+- Annual churn: ~33-40% (if 3-4% monthly)
+- Better target: 2-3% monthly (industry leading)
+- Net revenue retention goal: >100% (upsells offset churn)
 
 **Revenue Impact of Churn:**
-- At 5% monthly churn: Lose $1,875 MRR per month (at $37,500 MRR)
-- At 3% monthly churn: Lose $1,125 MRR per month
-- Churn reduction critical for profitability
+- At $1,000 MRR (15 customers × $68 ARPC) and 3% monthly churn:
+  - Lose $30 MRR per month (less than 1 customer)
+- At $5,000 MRR and 3% churn:
+  - Lose $150 MRR per month (~2 customers)
+- Churn reduction critical but not fatal at small scale
 
 ---
 
@@ -584,76 +623,88 @@
 ### Key Metrics
 
 **Customer Acquisition:**
-- CAC: $250-500
-- CAC payback: 5.6-11.1 months
-- Trial-to-paid conversion: 20-30% (industry average)
-- Lead-to-customer conversion: 5-10% (depends on channel)
+- **CAC:** $40-100/customer (very low, organic-focused)
+- **CAC payback:** 0.7-1.8 months (excellent)
+- **Trial-to-paid conversion:** 20-30% (target)
+- **Lead-to-customer conversion:** 5-10% (depends on channel)
 
 **Customer Value:**
-- ARPC: $75/month
-- Lifetime Value (LTV): $2,700 (36 months × $75)
-- LTV:CAC ratio: 5.4:1 to 10.8:1 (excellent - target is 3:1+)
-- Gross margin: 60-70%
+- **ARPC:** $68/month (weighted average of tiers)
+- **Lifetime Value (LTV):** $1,360 (20 months × $68)
+- **LTV:CAC ratio:** 13.6:1 to 34:1 (EXCEPTIONAL - target is 3:1+)
+- **Gross margin:** 80-90%
 
 **Retention:**
-- Monthly churn: 3-5% (target)
-- Annual churn: 30-50%
-- Net revenue retention: >100% (expand within customers)
+- **Monthly churn:** 2-4% (target - better than industry 5-7%)
+- **Annual churn:** 25-40%
+- **Net revenue retention:** >100% (upsells to higher tiers)
 
 **Growth:**
-- Month-over-month MRR growth: 20-30% (early stage)
-- Year-over-year revenue growth: 300-500% (Years 1-2)
+- **Month-over-month MRR growth:** 30-50% (early stage)
+- **Year-over-year revenue growth:** N/A (bootstrap, not VC-scale)
 
 ### Profitability Timeline
 
 **Month-by-Month Projections (Conservative):**
 
-**Months 1-6:**
-- Revenue: $0-10,000 MRR
-- Costs: $15,600-26,500/month
-- Net Burn: $15,600-16,500/month
-- Cumulative Burn: ~$100,000
+**Months 1-3 (MVP Build):**
+- **Revenue:** $0
+- **Costs:** $0-15/month (infrastructure only)
+- **Net:** -$15/month
+- **Cumulative Burn:** ~$45 total (negligible)
 
-**Months 7-12:**
-- Revenue: $10,000-40,000 MRR
-- Costs: $31,500-54,000/month
-- Net Burn: $21,500-14,000/month
-- Cumulative Burn: ~$200,000 (total)
+**Month 4 (Launch):**
+- **Revenue:** $100-300 MRR (2-5 customers)
+- **Costs:** $15-50/month (infrastructure)
+- **Net:** +$85 to $250/month
+- **Status:** Profitable from Month 1!
 
-**Months 13-18:**
-- Revenue: $40,000-150,000 MRR
-- Costs: $81,000-145,000/month
-- Net: -$41,000 to +$5,000/month
-- Break-even: Month 18-24
+**Month 6:**
+- **Revenue:** $500-1,000 MRR (8-15 customers)
+- **Costs:** $50-100/month
+- **Net Profit:** $400-900/month
+- **Status:** **$1,000/month goal achieved!**
 
-**Months 19-24:**
-- Revenue: $150,000-300,000 MRR
-- Costs: $100,000-150,000/month (optimized)
-- Net Profit: $50,000-150,000/month
-- Cumulative Profit: ~$300,000
+**Month 12:**
+- **Revenue:** $2,000-5,000 MRR (30-75 customers)
+- **Costs:** $50-2,100/month (if hire part-time help)
+- **Net Profit:** $1,950-2,900/month
+- **Status:** Profitable, consider hiring help
 
-### Path to $10M ARR
+**Month 18:**
+- **Revenue:** $5,000-10,000 MRR (75-150 customers)
+- **Costs:** $2,100-8,000/month (small team)
+- **Net Profit:** $2,900-9,000/month
+- **Status:** Sustainable business, optional scaling
 
-**Conservative Scenario (3 years):**
-- Year 1: $450K ARR (500 customers)
-- Year 2: $2.25M ARR (2,500 customers)
-- Year 3: $9M ARR (10,000 customers)
-- **Total: $11.7M ARR over 3 years**
+### Path to $1,000/Month Profit
 
-**Moderate Scenario (2.5 years):**
-- Year 1: $750K ARR (833 customers)
-- Year 2: $3.75M ARR (4,166 customers)
-- Year 2.5: $10M ARR (11,111 customers)
+**Scenario 1: Conservative (12-month path):**
+- 15 paying customers
+- 60% Starter ($29) + 30% Professional ($79) + 10% Agency ($149)
+- MRR: $1,020/month
+- Costs: $100/month (infrastructure + Stripe fees)
+- **Profit: $920/month** ✅
 
-**Aggressive Scenario (2 years):**
-- Year 1: $1.5M ARR (1,666 customers)
-- Year 2: $10M ARR (11,111 customers)
+**Scenario 2: Moderate (6-month path):**
+- 18 paying customers
+- 50% Starter + 40% Professional + 10% Agency
+- MRR: $1,254/month
+- Costs: $150/month
+- **Profit: $1,104/month** ✅
 
-**Key Assumptions:**
-- Market validates (100+ waitlist signups, 20+ interviews, 10+ paying customers Month 1)
-- Product executes (reliable workflows, fast time-to-value)
-- Retention strong (<5% monthly churn)
-- CAC controlled ($250-500 per customer)
+**Scenario 3: Aggressive (4-month path):**
+- 20 paying customers
+- 40% Starter + 50% Professional + 10% Agency
+- MRR: $1,520/month
+- Costs: $200/month
+- **Profit: $1,320/month** ✅
+
+**Key Insight:**
+- Only need 15-20 customers to hit $1,000/month profit
+- With 20 customers at $68 ARPC, that's $1,360 MRR
+- Minus $200 costs = $1,160 profit
+- Very achievable with consistent marketing and good product
 
 ---
 
@@ -661,52 +712,59 @@
 
 ### Initial Advantages (Months 1-12)
 
-**1. SMB-First Design:**
-- Competitors focused on enterprise (Zapier, Make)
-- We prioritize simplicity, templates, and non-technical users
-- "Done-with-you" onboarding vs. self-service only
+**1. Simplicity vs. Complexity:**
+- Competitors: Basecamp (complex, clients resist adopting), Moxo (expensive, enterprise)
+- Us: Simple, client-focused, email notifications drive adoption
+- Advantage: Clients will actually use it (not another tool to ignore)
 
-**2. Transparent Pricing:**
-- Flat monthly pricing ($49-99) vs. usage-based (Zapier task pricing)
-- No surprise bills or hidden costs
-- Team pricing, not per-user pricing
+**2. White-Label Branding:**
+- Competitors: Generic "tool" branding
+- Us: Portal looks like YOUR agency
+- Advantage: Builds agency's brand, not ours
 
-**3. Hands-On Support:**
-- Concierge onboarding for early customers
-- Human support, not just documentation
-- Template customization assistance
+**3. Agency-Specific:**
+- Competitors: Generic project management (Asana, Monday)
+- Us: Built for agency-client communication workflow
+- Advantage: Fits exact use case, not generic
 
-**4. Speed & Focus:**
-- Move faster than incumbents (small team, focused scope)
-- Narrow focus (SMB orchestration, not "all automation")
-- 8-week MVP vs. 12-month enterprise feature sets
+**4. Price Positioning:**
+- Competitors: $11/month (Basecamp, limited) or $200+/month (Moxo, enterprise)
+- Us: $29-149/month (sweet spot: affordable but premium)
+- Advantage: Accessible to solo consultants, powerful enough for agencies
+
+**5. Solo-Maintainable:**
+- Competitors: bloated features, high overhead
+- Us: Narrow focus, lean operations
+- Advantage: Can be profitable with 15-20 customers
 
 ### Long-Term Moats (Months 12-24+)
 
-**1. Network Effects (Template Library):**
-- User-generated workflows (customers share templates)
-- More templates → more value → more users → more templates
-- Flywheel effect: 50 templates → 500 templates → 5,000 templates
+**1. Switching Costs:**
+- Client portals become core to agency operations
+- All client history, files, feedback in one place
+- Hard to migrate to another tool
+- Advantage: High retention, low churn
 
-**2. Data Moat (Workflow Intelligence):**
-- Learn what workflows work best (success rates, time savings)
-- AI recommends workflows based on similar businesses
-- "For a marketing agency like yours, try these 5 workflows"
+**2. Network Effects (Within Each Agency):**
+- More team members use portal → more valuable
+- More clients use portal → harder to leave
+- Advantage: Stickiness increases over time
 
-**3. Switching Costs:**
-- Custom workflows built in platform (hard to migrate)
-- Team training and onboarding (learning curve to switch)
-- Integration deepens over time (more workflows, more value)
+**3. Data Moat (Best Practices):**
+- Learn how successful agencies use portals
+- Build templates and workflows based on real usage
+- "For marketing agencies like yours, here's the optimal portal setup"
+- Advantage: Product gets better, harder to copy
 
-**4. Brand & Community:**
-- "The SMB AI platform" (category ownership)
-- Raving fans (customer advocacy, case studies)
-- Community of users (Slack/Discord, events, training)
+**4. Brand & Reputation:**
+- "The client portal for agencies" (category ownership)
+- Customer testimonials and case studies
+- Advantage: Trust and awareness in agency community
 
-**5. Economies of Scale:**
-- Infrastructure costs per customer decrease
-- AI API negotiate better rates (volume discounts)
-- Support costs per customer decrease (automation, self-service)
+**5. Operational Efficiency:**
+- Solo founder = low overhead = can be profitable at low scale
+- Competitors need 1000s of customers to cover team costs
+- Advantage: Can thrive where competitors die
 
 ---
 
@@ -714,181 +772,178 @@
 
 ### Market Risks
 
-**Risk 1: Commoditization (AI orchestration becomes free feature)**
-- **Probability:** Medium (30-40%)
+**Risk 1: "Clients Won't Use Another Tool"**
+- **Probability:** High (40-50%)
 - **Impact:** High
 - **Mitigation:**
-  - Focus on vertical depth (industry-specific workflows)
-  - Build service moat (implementation, support, templates)
-  - Move upmarket (enterprise features, custom integrations)
-- **Signal to Monitor:** Zapier/Make launching "AI orchestration" features
+  - Email notifications drive engagement (clients don't need to "use" the tool actively)
+  - Make portal read-only for clients (they just view, comment, download)
+  - Focus on "fewer tools for clients" (consolidate scattered communication)
+  - Emphasize: "One link to check instead of 50 emails"
+- **Signal to Monitor:** Customer complaints about "clients not logging in"
 
-**Risk 2: Enterprise Downpricing (Big tech targets SMBs)**
-- **Probability:** Low (20%)
-- **Impact:** High
+**Risk 2: "I Can Just Use Google Drive + Email"**
+- **Probability:** Medium (30-40%)
+- **Impact:** Medium
 - **Mitigation:**
-  - Build brand loyalty quickly (switching costs)
-  - Focus on "small business" positioning (not "cheaper enterprise")
-  - Deep integration with SMB tools (enterprise overlooks)
-- **Signal to Monitor:** Microsoft/Google launching "SMB AI" offerings
+  - Focus on fragmented communication pain (Google Drive doesn't solve messaging)
+  - Emphasize white-label branding (professional image)
+  - Highlight time savings (organizing email chaos vs. organized portal)
+  - Offer free trial to demonstrate value
+- **Signal to Monitor:** High churn, "not worth it" feedback
+
+**Risk 3: Commoditization (Project Management Tools Add Client Features)**
+- **Probability:** Medium (30%)
+- **Impact:** Medium-High
+- **Mitigation:**
+  - Focus on narrow use case (agency-client communication, not generic PM)
+  - Build deep features for this workflow (not shallow, broad features)
+  - Switching costs (portions become integral to agency operations)
+  - Brand as "client portal specialist" (not "yet another PM tool")
+- **Signal to Monitor:** Asana/Monday launching "client portal" features
 
 ### Product Risks
 
-**Risk 3: Technical Complexity (Harder to build than expected)**
+**Risk 4: Harder to Build Than Expected**
 - **Probability:** Medium (30-40%)
-- **Impact:** Medium-High
+- **Impact:** Medium
 - **Mitigation:**
-  - Start narrow (2-3 integrations, 5-10 templates)
-  - Use existing tools (Zapier API, not native integrations initially)
-  - Hire experienced AI/ML engineer
-- **Signal to Monitor:** Customer complaints about "doesn't work consistently"
+  - Start very narrow (MVP: portals + messaging + files, nothing else)
+  - Use existing tools (NextAuth, S3, Neon - don't build from scratch)
+  - Launch in 6-8 weeks (not 6 months)
+  - Cut features aggressively (better to be simple and working than complex and broken)
+- **Signal to Monitor:** Development taking >10 weeks
 
-**Risk 4: Reliability Issues (AI workflows fail)**
-- **Probability:** Medium (40-50%)
+**Risk 5: Technical Reliability Issues**
+- **Probability:** Low (20-30%)
 - **Impact:** High (trust lost)
 - **Mitigation:**
-  - Extensive testing before launch
-  - Error handling and "human in the loop" design
-  - Clear communication: "Beta - expect some hiccups"
-- **Signal to Monitor:** Churn due to reliability concerns
+  - Extensive testing before launch (beta with friendly agencies)
+  - Simple architecture = fewer bugs
+  - Fast bug fixes (communicate openly about issues)
+  - Start with free trial (customers understand beta hiccups)
+- **Signal to Monitor:** Churn due to bugs/reliability
 
 ### Business Model Risks
 
-**Risk 5: High CAC (Customer acquisition too expensive)**
+**Risk 6: High Churn (Agencies Stop Using)**
 - **Probability:** Medium (30%)
-- **Impact:** Medium
+- **Impact:** High
 - **Mitigation:**
-  - Content-led growth (organic traffic vs. paid)
-  - Product-led growth (referrals, virality)
-  - Focus on high-LTV customers (Professional tier)
-- **Signal to Monitor:** CAC:LTV ratio dropping below 3:1
+  - Focus on client adoption (if clients use it, agencies won't leave)
+  - Quick time-to-value (first portal live in <30 minutes)
+  - Check-in emails (ensure agencies are getting value)
+  - Annual discounts (lock in for 12 months, reduces churn)
+- **Signal to Monitor:** Monthly churn >5%
 
-**Risk 6: Low Willingness to Pay (Customers won't pay $50-100)**
+**Risk 7: Low Willingness to Pay (Won't Pay $29-99)**
 - **Probability:** Low (20%)
 - **Impact:** High
 - **Mitigation:**
-  - Freemium model (free tier to capture value-conscious users)
-  - Tiered pricing (Starter $29, Professional $79, Enterprise $199)
-  - Outcome-based pricing (pay for time saved, not seats)
-- **Signal to Monitor:** >50% of sales conversations include price objections
+  - Offer cheaper tier ($19/month) if needed
+  - Emphasize ROI (save 10 hours/month = $500+ in billable time)
+  - Free trial to prove value
+  - Money-back guarantee (reduce risk)
+- **Signal to Monitor:** >50% of signups mention price as barrier
 
-**Risk 7: High Churn (Customers don't stick)**
-- **Probability:** Medium (30%)
-- **Impact:** High
+**Risk 8: Too Time-Consuming (Solo Founder Burnout)**
+- **Probability:** Medium (30-40%)
+- **Impact:** Medium
 - **Mitigation:**
-  - Focus on time-to-value (first workflow in <1 hour)
-  - Template library (quick wins, visible value)
-  - Customer success team (proactive check-ins)
-  - Annual contracts (optional, with discount)
-- **Signal to Monitor:** Net revenue retention <100%
+  - Keep product simple (avoid feature creep)
+  - Limit customer count initially (cap at 30-50 until hire help)
+  - Template support responses (reduce time per ticket)
+  - Prioritize sleep and health (sustainable pace)
+- **Signal to Monitor:** Support >20 hours/week consistently
 
 ### Execution Risks
 
-**Risk 8: Founder Burnout (Too much to do)**
-- **Probability:** Medium (40%)
+**Risk 9: Can't Get Customers (No Traction)**
+- **Probability:** Medium (30%)
+- **Impact:** High
+- **Mitigation:**
+  - Pre-launch validation (waitlist, customer interviews)
+  - Content marketing build audience before launch
+  - Product Hunt launch for initial burst
+  - If no traction in 3 months, pivot or stop (don't drag it out)
+- **Signal to Monitor:** <5 paying customers in first 2 months
+
+**Risk 10: Competitor with More Funding Crushes Us**
+- **Probability:** Low (15-20%)
 - **Impact:** Medium
 - **Mitigation:**
-  - Hire early (delegate support, marketing)
-  - Narrow focus (don't overbuild)
-  - Take breaks (sustainable pace)
-- **Signal to Monitor:** Declining productivity, health issues
-
-**Risk 9: Running Out of Cash (Before profitability)**
-- **Probability:** Low (20%)
-- **Impact:** Fatal
-- **Mitigation:**
-  - Bootstrap as long as possible (keep costs low)
-  - Reinvest revenue (don't scale prematurely)
-  - Fundraise early if growth accelerates (don't wait until desperate)
-- **Signal to Monitor:** <6 months runway
+  - Focus on niche they overlook (small agencies, 3-20 employees)
+  - Operational efficiency (we can be profitable at low scale)
+  - Switching costs (customers won't easily leave)
+  - If acquired, great exit (if not, niche is defensible)
+- **Signal to Monitor:** Well-funded competitor launching "client portal for small agencies"
 
 ---
 
 ## 13. Success Criteria & Go/No-Go Decision Points
 
-### Validation Success Criteria (Months 1-2)
+### Validation Success Criteria (Pre-Launch - Month 1-2)
 
-**Green Light (Proceed):**
-- ✅ 100+ waitlist signups in 2 weeks
-- ✅ 20+ customer interviews with consistent pain points
-- ✅ 80%+ confirm problem (AI tool overload)
-- ✅ 60%+ express willingness to pay $50-100/month
-- ✅ 5+ say "I need this now" (high urgency)
+**Green Light (Proceed to Build):**
+- ✅ 50+ waitlist signups in 2 weeks (landing page + cold outreach)
+- ✅ 10+ customer interviews with consistent pain points
+- ✅ 80%+ confirm communication fragmentation problem
+- ✅ 60%+ express willingness to pay $29-79/month
+- ✅ 3+ say "I need this now" (high urgency)
 
 **Yellow Light (Proceed with Caution):**
 - ⚠️ 20-50 waitlist signups (weak signal)
-- ⚠️ Customers say "interesting" but don't buy
-- ⚠️ High price sensitivity (won't pay >$30/month)
-- ⚠️ Pain points inconsistent across interviews
+- ⚠️ Mixed feedback on pain points (inconsistent problem)
+- ⚠️ High price sensitivity (won't pay >$20/month)
+- ⚠️ Clients say "interesting but not urgent"
 
-**Red Light (Pivot or Stop):**
+**Red Light (Stop or Pivot):**
 - ❌ <20 waitlist signups in 2 weeks
-- ❌ Can't get 10 customer interviews after 50 outreach attempts
-- ❌ 0-5 paid customers in first month
+- ❌ Can't get 5 customer interviews after 30 outreach attempts
 - ❌ "Nice to have" not "must have" feedback
+- ❌ Existing tools "work fine enough" (no acute pain)
 
 ### Launch Success Criteria (Months 3-6)
 
-**Green Light (Scale):**
-- ✅ 10+ paying customers in first month
+**Green Light (Scale to $1,000/month):**
+- ✅ 5+ paying customers in first month
 - ✅ <5% churn in first 30 days
-- ✅ 50+ workflows created by customers
-- ✅ 1+ customer says "I'd pay double for this"
-- ✅ Product Hunt: Top 5 Product of the Day
+- ✅ 10+ client portals created
+- ✅ 1+ customer says "This is essential now"
+- ✅ Clear path to $1,000/month in 6 months
 
 **Yellow Light (Iterate):**
-- ⚠️ 5-10 paying customers in first month
+- ⚠️ 2-5 paying customers in first month
 - ⚠️ 5-10% churn in first 30 days
-- ⚠️ 20-50 workflows created
-- ⚠️ Mixed feedback on value proposition
-
-**Red Light (Pivot):**
-- ❌ 0-5 paying customers in first month
-- ❌ >15% churn in first 30 days
-- ❌ <20 workflows created
-- ❌ "Doesn't work as advertised" feedback
-
-### Product-Market Fit Criteria (Months 6-12)
-
-**Green Light (Product-Market Fit Achieved):**
-- ✅ $10K+ MRR by Month 6
-- ✅ <10% monthly churn
-- ✅ NPS >40
-- ✅ Clear path to $100K MRR in 12 months
-- ✅ Customers refer others organically
-
-**Yellow Light (Keep Iterating):**
-- ⚠️ $5-10K MRR at Month 6
-- ⚠️ 10-15% churn
-- ⚠️ NPS 20-40
-- ⚠️ Unclear growth path
+- ⚠️ Mixed feedback on ease of use
+- ⚠️ Need to adjust onboarding or features
 
 **Red Light (Pivot or Stop):**
-- ❌ <$5K MRR at Month 6
-- ❌ >15% churn
-- ❌ NPS <20
-- ❌ Unable to articulate clear value prop
+- ❌ 0-2 paying customers in first month
+- ❌ >15% churn in first 30 days
+- ❌ "Doesn't work as advertised" feedback
+- ❌ Can't get product-market fit in 6 months
 
-### Scale Success Criteria (Months 12-24)
+### Profitability Success Criteria (Months 6-12)
 
-**Green Light (Hypergrowth):**
-- ✅ $10M ARR by Month 24
-- ✅ 10,000+ paying customers
+**Green Light ($1,000/month Profit Achieved):**
+- ✅ $1,000+ MRR by Month 6
 - ✅ <5% monthly churn
-- ✅ LTV:CAC >5:1
-- ✅ Clear category leadership ("SMB AI orchestration")
+- ✅ Positive cash flow
+- ✅ Clear growth path (or satisfied with lifestyle business)
+- ✅ Customers referring others
 
-**Yellow Light (Steady Growth):**
-- ⚠️ $5-10M ARR by Month 24
-- ⚠️ 5,000-10,000 customers
+**Yellow Light (Keep Going):**
+- ⚠️ $500-1,000 MRR at Month 6
 - ⚠️ 5-10% churn
-- ⚠️ LTV:CAC 3-5:1
+- ⚠️ Break-even or slightly profitable
+- ⚠️ Need to optimize marketing or product
 
-**Red Light (Plateau):**
-- ❌ <$5M ARR by Month 24
-- ❌ <5,000 customers
+**Red Light (Consider Pivot):**
+- ❌ <$500 MRR at Month 6
 - ❌ >10% churn
-- ❌ Need to pivot or narrow focus
+- ❌ Still losing money
+- ❌ No clear path to profitability
 
 ---
 
@@ -897,53 +952,52 @@
 ### Acquisition Potential
 
 **Strategic Acquirers:**
-- **Zapier:** Acquire to enter SMB market, eliminate competition
-- **Microsoft:** Acquire for "Microsoft Copilot for Small Business"
-- **Google:** Acquire for "Google Workspace AI Automation"
-- **HubSpot:** Acquire for SMB CRM + AI automation bundle
-- **Salesforce:** Acquire for SMB automation offering
+- **Basecamp/37signals:** Acquire to eliminate niche competitor, add client portal features
+- **Asana/Monday.com:** Acquire for "client communication" module
+- **HubSpot:** Acquire for "agency-client portal" integration
+- **Zapier:** Acquire for "client portal" workflow integration
 
 **Acquisition Scenarios:**
-- **Early Exit (Years 2-3):** $10-50M (if strategic buyer wants team/tech)
-- **Growth Exit (Years 3-5):** $50-200M (if $10-50M ARR, strong growth)
-- **IPO Exit (Years 7-10):** $1B+ (if reach $100M+ ARR, market leader)
+- **Lifestyle Exit (Years 2-5):** $50K-200K (if profitable at $1K-5K MRR, small but stable)
+- **Growth Exit (Years 3-7):** $200K-1M (if $5K-20K MRR, strong niche position)
+- **Unicorn Exit:** Unlikely (not VC-scale, not targeting massive market)
 
-### IPO Potential
+### IPO Potential: None
+- This is a lifestyle/scale-up business, not a venture-scale startup
+- Goal: Profitable, sustainable, solo- or small-team operated
+- No desire to become $100M ARR company (would require VC, hiring, complexity)
 
-**Pre-IPO Milestones:**
-- $100M+ ARR
-- 100,000+ paying customers
-- 40%+ gross margin
-- 20%+ year-over-year growth
-- Clear market leadership (SMB AI orchestration)
-
-**Comparable SaaS IPOs:**
-- Zapier (valuation: $5B, ARR: $140M)
-- Monday.com (valuation: $7B, ARR: $500M+)
-- Asana (valuation: $4B, ARR: $400M+)
-
-### Long-Term Vision (10 Years)
+### Long-Term Vision (5-10 Years)
 
 **Mission:**
-"Make AI accessible and useful for every small business"
+"Eliminate communication chaos for agencies and their clients"
 
 **Vision:**
-- #1 AI orchestration platform for SMBs (30M+ businesses globally)
-- 1M+ paying customers
-- $1B+ ARR
-- 1,000+ employees
-- Global presence (US, Europe, Asia)
+- 500-2,000 paying customers (not 100,000)
+- $10K-100K MRR (lifestyle business, not unicorn)
+- Solo founder or 2-3 person team (not 50 employees)
+- Remote-first, asynchronous communication
+- Profit: $5K-80K/month (great life, not stress and burnout)
 
 **Product Evolution:**
-- **Years 1-3:** Workflow automation platform
-- **Years 3-5:** AI-powered business operations platform (CRM, marketing, finance)
-- **Years 5-10:** "Operating system for SMBs" (all business functions AI-automated)
+- **Years 1-2:** Core client portal (messaging, files, milestones)
+- **Years 2-3:** Advanced features (feedback workflows, approvals, reporting)
+- **Years 3-5:** Integrations (Slack, Google Drive, Zapier)
+- **Years 5+:** Maintain and optimize, resist feature creep
+
+**Lifestyle Goals:**
+- Work 20-30 hours/week (not 60-80)
+- Location independence (travel, live anywhere)
+- Financial freedom ($10K-20K/month profit)
+- Time for family, health, hobbies
+- No bosses, no investors, no stress
 
 **Impact:**
-- Save 10M+ small businesses from AI tool overload
-- Eliminate $10B+ in wasted AI spend annually
-- Create 10,000+ jobs
-- Democratize AI access (not just for big enterprises)
+- Help 500-2,000 agencies eliminate communication chaos
+- Save agencies 5-20 hours/week = 1,000-4,000 hours total
+- Improve agency-client relationships
+- Enable agencies to scale without chaos
+- Prove you don't need VC to build a profitable business
 
 ---
 
@@ -952,79 +1006,83 @@
 ### Business Model Summary
 
 **What:**
-B2B SaaS platform that helps small businesses consolidate AI tools and automate workflows without coding.
+B2B SaaS client portal for agencies and consultants to centralize communication, file sharing, and project visibility with clients.
 
 **Who:**
-5-50 employee service businesses (marketing agencies, consulting, e-commerce) paying $300-500/month for fragmented AI tools.
+3-20 employee service businesses (agencies, consultants) drowning in scattered client communication across email, Slack, Google Drive, and phone calls.
 
 **How:**
-- Subscription revenue: $49-299/month
-- Hands-on onboarding and support
-- Template library for quick wins
-- Integrations with top 10 business tools
+- Subscription revenue: $29-149/month
+- White-label client portals (branded as agency)
+- Email notifications drive client adoption
+- Solo-founder operated (minimal overhead)
+- Simple tech stack (Next.js, PostgreSQL, S3)
 
 **Why Now:**
-- AI tool overload at peak frustration
-- SMB adoption accelerating (75% investing in AI)
-- No dominant SMB orchestration player
-- Market window: 2025-2026
+- Remote work has fragmented communication (more channels = more chaos)
+- Agencies are drowning in client communication overload
+- Existing tools too complex (Basecamp) or too expensive (Moxo)
+- Market gap: simple, affordable, client-focused portal
 
 ### Unit Economics Summary
 
-- **CAC:** $250-500/customer
-- **LTV:** $2,700/customer (36 months × $75)
-- **LTV:CAC:** 5.4:1 to 10.8:1 (excellent)
-- **Gross Margin:** 60-70%
-- **Payback Period:** 5.6-11.1 months
-- **Churn Target:** <5% monthly
+- **CAC:** $40-100/customer (very low, organic channels)
+- **LTV:** $1,360/customer (20 months × $68)
+- **LTV:CAC:** 13.6:1 to 34:1 (exceptional)
+- **Gross Margin:** 80-90%
+- **Payback Period:** 0.7-1.8 months (excellent)
+- **Churn Target:** 2-4% monthly
 
 ### Financial Projections Summary
 
-**Year 1:**
-- 500 paying customers
-- $450K ARR
-- Net burn: $200K total
-- Runway needed: $100-200K bootstrap
+**Month 6 (Goal):**
+- 15 paying customers
+- $1,000 MRR
+- $100 costs
+- **$900 profit** ✅
 
-**Year 2:**
-- 2,500 paying customers
-- $2.25M ARR
-- Break-even: Month 18-24
+**Month 12:**
+- 30-50 paying customers
+- $2,000-3,400 MRR
+- $150-300 costs
+- **$1,850-3,100 profit**
 
-**Year 3:**
-- 10,000 paying customers
-- $9M ARR
-- Profitable: $3-5M/year
+**Month 24:**
+- 75-150 paying customers (if desired)
+- $5,000-10,000 MRR
+- $2,000-5,000 costs (small team)
+- **$3,000-5,000 profit**
 
 ### Immediate Next Steps
 
 **This Week (Business Model Finalization):**
 1. ✅ Complete business model canvas (this document)
 2. ⬜ Create pricing strategy document
-3. ⬜ Build revenue projections spreadsheet
-4. ⬜ Draft go-to-market plan
-5. ⬜ Update customer avatar based on validation
+3. ⬜ Create revenue projections
+4. ⬜ Create customer avatar document
+5. ⬜ Create go-to-market strategy
 
-**Next Week (Pricing & Revenue Strategy):**
-1. Finalize pricing tiers ($49, $99, $299)
-2. Validate pricing with 20 potential customers
-3. Create revenue projections (conservative, moderate, aggressive)
-4. Define monetization experiments (freemium, annual discounts, etc.)
+**Next Week (Validation):**
+1. Build landing page with value proposition
+2. Launch pre-launch waitlist campaign
+3. Conduct 10 customer interviews (agencies with 5-20 employees)
+4. Validate pain points and willingness to pay
+5. Go/No-Go decision (proceed to build or pivot)
 
-**Month 2 (Go-to-Market Prep):**
-1. Build landing page with pricing
-2. Create pre-launch waitlist campaign
-3. Develop customer interview script
-4. Start content marketing (blog, YouTube, community)
+**Month 2 (MVP Build):**
+1. Set up tech stack (Next.js, PostgreSQL, S3)
+2. Build core features (portals, messaging, files)
+3. Beta test with 3-5 friendly agencies
+4. Fix bugs and polish UX
 
 **Month 3 (Launch):**
 1. Product Hunt launch
-2. 100+ waitlist signups goal
-3. 20+ customer interviews
-4. Begin MVP development (if validated)
+2. Content marketing campaign
+3. Customer testimonials
+4. Iterate based on feedback
 
 ---
 
 **Document Status:** ✅ Complete
 **Next Document:** Pricing Strategy (docs/strategy/pricing-strategy.md)
-**Last Updated:** January 8, 2026
+**Last Updated:** January 9, 2026
