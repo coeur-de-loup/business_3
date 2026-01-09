@@ -1,0 +1,450 @@
+// This is your Prisma schema file for the SMB AI Orchestration Platform
+// Learn more: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================================================
+// USERS & ORGANIZATIONS
+// ============================================================================
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  name         String?
+  passwordHash String?
+  role         UserRole   @default(MEMBER)
+  lastLoginAt  DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  // Relations
+  organization    Organization @relation("OrganizationUsers", fields: [organizationId], references: [id], onDelete: Cascade)
+  organizationId  String
+  createdWorkflows Workflow[]  @relation("CreatedBy")
+  executions      Execution[]
+
+  @@index([organizationId])
+  @@index([email])
+  @@map("users")
+}
+
+enum UserRole {
+  OWNER   // Full access, billing management
+  ADMIN   // All features except billing
+  MEMBER  // Access to assigned workflows
+  VIEWER  // Read-only access
+}
+
+model Organization {
+  id                String        @id @default(cuid())
+  name              String
+  plan              Plan          @default(STARTER)
+  stripeCustomerId  String?       @unique
+  trialEndsAt       DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  // Relations
+  users         User[]         @relation("OrganizationUsers")
+  workflows     Workflow[]
+  integrations  Integration[]
+  usageRecords  UsageRecord[]
+  subscriptions Subscription[]
+  settings      OrganizationSettings?
+
+  @@index([plan])
+  @@index([stripeCustomerId])
+  @@map("organizations")
+}
+
+enum Plan {
+  STARTER      // $49/month - 5 workflows, 3 integrations
+  PROFESSIONAL // $99/month - 25 workflows, 10 integrations
+  ENTERPRISE   // $299+/month - unlimited
+}
+
+model OrganizationSettings {
+  id                String   @id @default(cuid())
+  organizationId    String   @unique
+  organization      Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  // Settings
+  timezone          String   @default("UTC")
+  dateFormat        String   @default("MM/DD/YYYY")
+  timeFormat        String   @default("12h")
+  defaultLanguage   String   @default("en")
+
+  // Notifications
+  emailNotifications Boolean @default(true)
+  slackWebhookUrl   String?
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("organization_settings")
+}
+
+// ============================================================================
+// WORKFLOWS
+// ============================================================================
+
+model Workflow {
+  id          String           @id @default(cuid())
+  name        String
+  description String?
+  category    WorkflowCategory
+  definition  Json             // Workflow DSL (JSON)
+  status      WorkflowStatus   @default(ACTIVE)
+  isTemplate  Boolean          @default(false)
+  schedule    Json?            // Cron expression or interval
+  triggers    Json?            // Webhook, manual, scheduled
+
+  // Metadata
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  // Relations
+  organization Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  organizationId String
+  createdBy    User?            @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById  String?
+  executions   Execution[]
+
+  @@index([organizationId])
+  @@index([status])
+  @@index([category])
+  @@index([createdAt])
+  @@map("workflows")
+}
+
+enum WorkflowCategory {
+  MARKETING        // Email campaigns, social media
+  SALES            // CRM follow-ups, lead scoring
+  OPERATIONS       // Scheduling, reporting, data entry
+  CUSTOMER_SUPPORT // Ticket triage, responses
+  ADMIN            // Invoicing, notifications
+  CUSTOM           // User-defined
+}
+
+enum WorkflowStatus {
+  ACTIVE   // Enabled and running
+  PAUSED   // Temporarily disabled
+  ARCHIVED // Not in use, kept for history
+  DRAFT    // Still being built
+}
+
+// ============================================================================
+// WORKFLOW EXECUTIONS
+// ============================================================================
+
+model Execution {
+  id       String          @id @default(cuid())
+  status   ExecutionStatus @default(PENDING)
+  startedAt DateTime       @default(now())
+  completedAt DateTime?
+  duration Int?            // Milliseconds
+
+  // Input & Output
+  input  Json?             // Initial input data
+  output Json?             // Final result
+  error  Json?             // Error details if failed
+  result ExecutionResult   @default(PENDING)
+
+  // Metadata
+  triggeredBy       TriggeredBy @default(MANUAL)
+  triggeredByUserId String?
+  webhookEventId    String?
+
+  // Relations
+  workflow   Workflow       @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  workflowId String
+  user       User?          @relation(fields: [userId], references: [id])
+  userId     String?
+  logs       ExecutionLog[]
+
+  @@index([workflowId])
+  @@index([status])
+  @@index([startedAt])
+  @@index([userId])
+  @@map("executions")
+}
+
+enum ExecutionStatus {
+  PENDING   // Queued, waiting to start
+  RUNNING   // Currently executing
+  WAITING   // Awaiting human input or external event
+  COMPLETED // Finished successfully
+  FAILED    // Error occurred
+  CANCELLED // User cancelled
+  TIMEOUT   // Exceeded max duration
+}
+
+enum ExecutionResult {
+  PENDING  // Not yet determined
+  SUCCESS  // Completed without errors
+  PARTIAL  // Some steps failed
+  FAILURE  // All steps failed
+  CANCELLED // User cancelled
+}
+
+enum TriggeredBy {
+  MANUAL   // User clicked "Run"
+  SCHEDULE // Cron/schedule triggered
+  WEBHOOK  // External webhook
+  API      // API call
+}
+
+model ExecutionLog {
+  id        String   @id @default(cuid())
+  level     LogLevel
+  stepId    String?  // Which step generated this log
+  message   String
+  metadata  Json?    // Additional context
+  timestamp DateTime @default(now())
+
+  // Relations
+  execution Execution @relation(fields: [executionId], references: [id], onDelete: Cascade)
+  executionId String
+
+  @@index([executionId])
+  @@index([timestamp])
+  @@index([level])
+  @@map("execution_logs")
+}
+
+enum LogLevel {
+  DEBUG
+  INFO
+  WARN
+  ERROR
+  CRITICAL
+}
+
+// ============================================================================
+// INTEGRATIONS
+// ============================================================================
+
+model Integration {
+  id         String            @id @default(cuid())
+  provider   IntegrationProvider
+  credentials Json?             // Encrypted OAuth tokens, API keys
+  settings   Json?             // User preferences per integration
+  status     IntegrationStatus @default(ACTIVE)
+  lastUsedAt DateTime?
+  createdAt  DateTime          @default(now())
+  updatedAt  DateTime          @updatedAt
+
+  // Metadata
+  webhookUrl String?           // For incoming webhooks
+
+  // Relations
+  organization Organization    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  organizationId String
+
+  @@index([organizationId])
+  @@index([provider])
+  @@index([status])
+  @@map("integrations")
+}
+
+enum IntegrationProvider {
+  // AI Providers
+  OPENAI
+  ANTHROPIC
+  GOOGLE_GEMINI
+  COHERE
+
+  // Communication
+  SLACK
+  MICROSOFT_TEAMS
+  DISCORD
+
+  // Email
+  GMAIL
+  OUTLOOK
+  SENDGRID
+  RESEND
+
+  // CRM & Sales
+  HUBSPOT
+  SALESFORCE
+  PIPEDRIVE
+
+  // Project Management
+  TRELLO
+  ASANA
+  MONDAY
+  NOTION
+  LINEAR
+
+  // E-commerce
+  SHOPIFY
+  WOO_COMMERCE
+  SQUARE
+
+  // Marketing
+  MAILCHIMP
+  CONVERTKIT
+  ACTIVECAMPAIGN
+
+  // Payments
+  STRIPE
+  PAYPAL
+
+  // Scheduling
+  CALENDLY
+  ACUITY
+
+  // Automation Platforms
+  ZAPIER
+  MAKE
+
+  // Spreadsheets
+  GOOGLE_SHEETS
+  AIRTABLE
+}
+
+enum IntegrationStatus {
+  ACTIVE   // Working normally
+  EXPIRED  // OAuth token expired
+  ERROR    // Connection error
+  DISABLED // User disabled
+}
+
+// ============================================================================
+// TEMPLATES
+// ============================================================================
+
+model Template {
+  id                    String             @id @default(cuid())
+  name                  String
+  description           String
+  category              WorkflowCategory
+  tags                  String[]           // For search/discovery
+  difficulty            TemplateDifficulty @default(BEGINNER)
+  estimatedTimeSavings String             // e.g., "2 hours/week"
+
+  // Workflow Definition
+  definition Json                        // Prebuilt workflow DSL
+
+  // Configuration
+  requiredIntegrations String[]          // List of IntegrationProvider enums
+  optionalIntegrations String[]
+  configurationSchema  Json?             // JSON Schema for user inputs
+
+  // Metadata
+  author     TemplateAuthor @default(OFFICIAL)
+  isPublic   Boolean        @default(true)
+  popularity Int            @default(0)  // Usage count
+  rating     Float          @default(0)  // Average user rating (1-5)
+  ratingCount Int           @default(0)
+
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+
+  @@index([category])
+  @@index([author])
+  @@index([popularity])
+  @@index([rating])
+  @@map("templates")
+}
+
+enum TemplateDifficulty {
+  BEGINNER     // No technical skills required
+  INTERMEDIATE // Some configuration needed
+  ADVANCED     // Requires technical knowledge
+}
+
+enum TemplateAuthor {
+  OFFICIAL  // Created by our team
+  COMMUNITY // Created by users
+}
+
+// ============================================================================
+// USAGE & BILLING
+// ============================================================================
+
+model UsageRecord {
+  id             String        @id @default(cuid())
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  organizationId String
+
+  // Usage Metrics
+  metric   UsageMetric
+  quantity Int            // Number of units used
+  cost     Float?         // Actual cost (if applicable)
+
+  // Time Period
+  periodStart DateTime
+  periodEnd   DateTime
+
+  // Metadata
+  details Json?           // Additional context
+
+  createdAt DateTime @default(now())
+
+  @@unique([organizationId, metric, periodStart, periodEnd])
+  @@index([organizationId])
+  @@index([periodStart, periodEnd])
+  @@map("usage_records")
+}
+
+enum UsageMetric {
+  WORKFLOW_EXECUTIONS
+  AI_TOKENS_USED
+  API_CALLS
+  STORAGE_BYTES
+  USERS_COUNT
+  INTEGRATIONS_COUNT
+}
+
+model Subscription {
+  id              String            @id @default(cuid())
+  organization    Organization      @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  organizationId  String
+
+  // Stripe
+  stripeSubscriptionId String?      @unique
+  stripePriceId        String?
+  stripeCurrentPeriodEnd DateTime?
+
+  // Plan
+  plan            Plan              @default(STARTER)
+  status          SubscriptionStatus @default(ACTIVE)
+
+  // Billing
+  amount          Float             // Monthly/annual cost
+  currency        String            @default("USD")
+  billingInterval BillingInterval   @default(MONTHLY)
+
+  // Trial
+  trialStart      DateTime?
+  trialEnd        DateTime?
+
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([organizationId])
+  @@index([status])
+  @@index([stripeSubscriptionId])
+  @@map("subscriptions")
+}
+
+enum SubscriptionStatus {
+  ACTIVE      // Currently subscribed
+  TRIALING    // In trial period
+  PAST_DUE    // Payment failed
+  CANCELLED   // Cancelled by user
+  INCOMPLETE  // Initial payment pending
+}
+
+enum BillingInterval {
+  MONTHLY
+  YEARLY
+}

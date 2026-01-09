@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+dist
+build
+.turbo
+coverage
+.vercel
+.netlify
+.pnp
+.pnp.js
+*.log
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+.env*
+!.env.example
