@@ -1,8 +1,7 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// Client Portal SaaS Database Schema
+// Based on technical architecture: docs/technical/architecture.md
+//
+// Entities: Agencies, Users, Portals, Messages, Files, Projects, Milestones, Subscriptions
 
 generator client {
   provider = "prisma-client"
@@ -11,4 +10,286 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// AUTHENTICATION & USER MANAGEMENT
+// ============================================================================
+
+enum UserRole {
+  OWNER    // Full access to agency data, billing, team management
+  ADMIN    // Full access to portals, messages, files; no billing
+  MEMBER   // Access to assigned portals only; cannot delete
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String?
+  name         String?
+  role         UserRole  @default(MEMBER)
+  agencyId     String
+  agency       Agency    @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Messages sent by this user
+  sentMessages  Message[] @relation("SentByUser")
+
+  // Files uploaded by this user
+  uploadedFiles File[] @relation("UploadedByUser")
+
+  @@index([agencyId])
+  @@index([email])
+}
+
+model Agency {
+  id               String    @id @default(cuid())
+  name             String
+  slug             String?   @unique // For custom subdomains (future feature)
+  logoUrl          String?
+  domain           String?   @unique // Custom domain (future feature)
+
+  // Subscription & Billing
+  planId           String    @default("starter") // starter, professional, agency
+  stripeCustomerId String?   @unique
+
+  // Relationships
+  users            User[]            @relation(onDelete: Cascade)
+  portals          Portal[]          @relation(onDelete: Cascade)
+  subscription     Subscription?
+  usageRecords     UsageRecord[]
+
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@index([stripeCustomerId])
+}
+
+// ============================================================================
+// CLIENT PORTALS
+// ============================================================================
+
+enum PortalStatus {
+  ACTIVE
+  ARCHIVED
+  ON_HOLD
+}
+
+model Portal {
+  id           String       @id @default(cuid())
+  agencyId     String
+  agency       Agency       @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  // Client Information
+  clientName   String
+  clientEmail  String
+
+  // Portal Details
+  title        String       // e.g., "Website Redesign Project"
+  description  String?      @db.Text
+  status       PortalStatus @default(ACTIVE)
+
+  // Branding (White-label)
+  theme        String?      @default("light") // light, dark, custom
+  primaryColor String?      @default("#3b82f6")
+  logoUrl      String?      // Agency's logo for this portal
+
+  // Magic Link Access (Client authentication without password)
+  magicToken   String?      @unique // Cryptographically random token
+  magicTokenExpiresAt DateTime?
+
+  // Relationships
+  messages     Message[]
+  files        File[]
+  projects     Project[]
+
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  @@index([agencyId])
+  @@index([magicToken])
+}
+
+// ============================================================================
+// MESSAGING SYSTEM
+// ============================================================================
+
+enum MessageSenderType {
+  USER    // Agency owner or team member
+  CLIENT  // Client (external)
+}
+
+model Message {
+  id        String          @id @default(cuid())
+  portalId  String
+  portal    Portal          @relation(fields: [portalId], references: [id], onDelete: Cascade)
+
+  // Sender: Can be user (agency) or client (via magic link)
+  senderId   String?        // User ID if sent by agency member
+  sender     User?          @relation("SentByUser", fields: [senderId], references: [id], onDelete: SetNull)
+  senderType MessageSenderType // USER or CLIENT
+  senderName String?        // Display name for client messages
+  senderEmail String?       // Email for client messages
+
+  // Content
+  content    String         @db.Text
+
+  // Read status (for agency users)
+  readAt     DateTime?
+
+  createdAt  DateTime       @default(now())
+
+  @@index([portalId])
+  @@index([senderId])
+}
+
+// ============================================================================
+// FILE STORAGE
+// ============================================================================
+
+model File {
+  id           String   @id @default(cuid())
+  portalId     String
+  portal       Portal   @relation(fields: [portalId], references: [id], onDelete: Cascade)
+
+  // Upload metadata
+  uploadedById String?
+  uploadedBy   User?    @relation("UploadedByUser", fields: [uploadedById], references: [id], onDelete: SetNull)
+  filename     String   // Original filename
+  s3Key        String   @unique // S3/R2 path: {agencyId}/{portalId}/{fileId}/{filename}
+  size         BigInt   // File size in bytes
+  mimeType     String   // e.g., "application/pdf"
+
+  // Version tracking
+  version      Int      @default(1)
+  isLatest     Boolean  @default(true)
+  parentFileId String?  // If this is a new version, parentFileId links to original
+
+  createdAt    DateTime @default(now())
+
+  @@index([portalId])
+  @@index([uploadedById])
+  @@index([s3Key])
+}
+
+// ============================================================================
+// PROJECTS & MILESTONES
+// ============================================================================
+
+enum ProjectStatus {
+  PLANNING
+  IN_PROGRESS
+  ON_HOLD
+  COMPLETED
+  CANCELLED
+}
+
+model Project {
+  id          String       @id @default(cuid())
+  portalId    String
+  portal      Portal       @relation(fields: [portalId], references: [id], onDelete: Cascade)
+
+  name        String
+  description String?      @db.Text
+  status      ProjectStatus @default(PLANNING)
+  startDate   DateTime?
+  endDate     DateTime?
+
+  // Relationships
+  milestones  Milestone[]
+
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([portalId])
+}
+
+enum MilestoneStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+model Milestone {
+  id          String         @id @default(cuid())
+  projectId   String
+  project     Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  title       String
+  description String?        @db.Text
+  status      MilestoneStatus @default(PENDING)
+  dueDate     DateTime?
+  completedAt DateTime?
+
+  // Order for display
+  order       Int            @default(0)
+
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([projectId])
+}
+
+// ============================================================================
+// SUBSCRIPTIONS & BILLING
+// ============================================================================
+
+enum SubscriptionStatus {
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELLED
+  INCOMPLETE
+}
+
+model Subscription {
+  id                    String              @id @default(cuid())
+  agencyId              String              @unique
+  agency                Agency              @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  // Stripe integration
+  stripeSubscriptionId  String?             @unique
+  stripePriceId         String?
+  status                SubscriptionStatus  @default(TRIALING)
+
+  // Billing period
+  currentPeriodStart    DateTime?
+  currentPeriodEnd      DateTime?
+  cancelAtPeriodEnd     Boolean             @default(false)
+
+  // Trial
+  trialEndsAt           DateTime?
+
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+
+  @@index([stripeSubscriptionId])
+}
+
+// ============================================================================
+// USAGE TRACKING (for plan limits)
+// ============================================================================
+
+model UsageRecord {
+  id        String   @id @default(cuid())
+  agencyId  String
+  agency    Agency   @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+
+  // Metric being tracked
+  metric    String   // e.g., "activePortals", "teamMembers", "storageGB"
+
+  // Usage count
+  count     Int
+
+  // Period (for monthly tracking)
+  month     Int
+  year      Int
+
+  createdAt DateTime @default(now())
+
+  @@unique([agencyId, metric, month, year])
+  @@index([agencyId])
 }
