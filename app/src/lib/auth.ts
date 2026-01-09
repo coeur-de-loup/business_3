@@ -218,6 +218,24 @@ export async function getCurrentUser(): Promise<User | null> {
 }
 
 /**
+ * Get server session with user data (for API routes)
+ */
+export async function getServerSession(): Promise<{
+  user: {
+    id: string;
+    email: string;
+    organizationId: string;
+    role: string;
+  } | null;
+}> {
+  const session = await getSession();
+
+  return {
+    user: session || null,
+  };
+}
+
+/**
  * Register a new user and organization
  */
 export async function registerUser(data: {
