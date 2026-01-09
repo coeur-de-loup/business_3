@@ -1,1 +1,69 @@
-{}
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f \"${file}\" ]; then if command -v prettier &> /dev/null; then npx prettier --write \"${file}\" 2>/dev/null || true; elif command -v black &> /dev/null && [[ \"${file}\" == *.py ]]; then black \"${file}\" 2>/dev/null || true; fi; fi",
+            "statusMessage": "Auto-formatting file..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ \"${file}\" == \"package.json\" ]; then npm install 2>/dev/null || pnpm install 2>/dev/null || bun install 2>/dev/null || true; fi",
+            "statusMessage": "Installing dependencies..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ \"${file}\" == \"requirements.txt\" ] || [ \"${file}\" == \"pyproject.toml\" ] || [ \"${file}\" == \"Pipfile\" ]; then pip install -r requirements.txt 2>/dev/null || poetry install 2>/dev/null || pipenv install 2>/dev/null || true; fi",
+            "statusMessage": "Installing Python dependencies..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ \"${file}\" == \"go.mod\" ] || [ \"${file}\" == \"go.sum\" ]; then go mod download 2>/dev/null || true; fi",
+            "statusMessage": "Downloading Go modules..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ \"${file}\" == \"Cargo.toml\" ]; then cargo fetch 2>/dev/null || true; fi",
+            "statusMessage": "Fetching Cargo dependencies..."
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bd export -o .beads/issues.jsonl 2>/dev/null || true",
+            "statusMessage": "Exporting beads database..."
+          }
+        ]
+      }
+    ]
+  }
+}

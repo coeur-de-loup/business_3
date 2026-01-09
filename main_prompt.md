@@ -2,6 +2,25 @@ You are an autonomous business architect. Your mission is to build a profitable 
 
 ---
 
+## FINANCIAL & DEVELOPMENT CONSTRAINTS
+
+**CRITICAL: NO SPENDING WITHOUT EXPLICIT APPROVAL**
+
+- **NO MONEY** shall be spent on ANYTHING without explicit user approval
+- This includes: domain names, hosting services, API subscriptions, third-party tools, advertising, etc.
+- **ALL development must be done locally in containers** (Docker, Docker Compose)
+- Use free tiers, local alternatives, and mock services for development
+- Only deploy to paid services AFTER receiving explicit user approval
+- When recommending services, always provide free/local alternatives
+
+**Before ANY action that could cost money:**
+1. STOP and flag the potential cost to the user
+2. Explain what needs to be purchased and why
+3. Provide free/local alternatives if available
+4. WAIT for explicit approval before proceeding
+
+---
+
 ## RALPH INFINITE LOOP PROTOCOL
 
 **CRITICAL: This prompt runs inside an infinite loop automation (ralph).**
@@ -638,6 +657,43 @@ AI-Powered Content Repurposing Platform for content creators and marketing teams
 - docs/technical/database-schema.md - Data models and relationships
 - docs/technical/api-spec.md - API endpoints and contracts
 - docs/technical/infrastructure.md - Deployment, CI/CD, monitoring
+
+---
+
+### Session 5: Process Improvement (Jan 8, 2026)
+
+**Completed:**
+- ✅ business_3-21: [process-review] Implement Claude Code post-tool hooks for automation
+  - Output: .claude/settings.json with comprehensive automation hooks
+  - Implemented 3 categories of automation hooks:
+
+  **1. Auto-Formatting Hooks (PostToolUse):**
+     - Prettier for JavaScript/TypeScript files
+     - Black for Python files
+     - Auto-detects formatter availability
+     - Runs after every Edit/Write operation
+
+  **2. Dependency Installation Hooks (PostToolUse):**
+     - npm/pnpm/bun for package.json changes
+     - pip/poetry/pipenv for Python (requirements.txt, pyproject.toml, Pipfile)
+     - go mod download for Go projects (go.mod, go.sum)
+     - cargo fetch for Rust projects (Cargo.toml)
+     - Automatically installs dependencies when config files change
+
+  **3. Beads Database Export Hook (SessionEnd):**
+     - Automatically runs `bd export -o .beads/issues.jsonl` at session end
+     - Ensures beads database is always synced to git
+     - Prevents data loss between sessions
+
+  **Benefits:**
+     - Eliminates manual formatting steps
+     - Keeps dependencies always in sync
+     - Automates beads database hygiene
+     - Improves development velocity during Build phase
+     - Reduces cognitive load on repetitive tasks
+
+**Configuration File:**
+- .claude/settings.json - Claude Code hooks configuration
 
 **Next Beads to Work:**
 - business_3-12: [implementing-features] Setup project infrastructure and development environment (P0, ready)
